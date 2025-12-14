@@ -1,0 +1,218 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '../components/ui/button';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/card';
+import { Clock, Sparkles } from 'lucide-react';
+
+const massagesData = [
+  {
+    id: 1,
+    name: 'Massage Relaxant',
+    duration: '75 minutes',
+    price: 'CHF 140',
+    description: 'Massage du corps en entier. N\'hésitez pas à me faire part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
+    category: 'Détente'
+  },
+  {
+    id: 2,
+    name: 'Massage Détente Profond',
+    duration: '90 minutes',
+    price: 'CHF 165',
+    description: 'Massage du corps entier. Pour une complète remise à neuf! N\'hésitez pas à me faire part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
+    category: 'Détente'
+  },
+  {
+    id: 3,
+    name: 'Dos Détente',
+    duration: '30 minutes',
+    price: 'CHF 65',
+    description: 'Massage uniquement relaxant du dos, idéal pour une pause bien-être rapide.',
+    category: 'Dos'
+  },
+  {
+    id: 4,
+    name: 'Dos Profond',
+    duration: '60 minutes',
+    price: 'CHF 120',
+    description: 'Traite les tensions et blocages du dos avec efficacité. Un soin thérapeutique complet.',
+    category: 'Dos'
+  },
+  {
+    id: 5,
+    name: 'Femme Enceinte',
+    duration: '60 minutes',
+    price: 'CHF 120',
+    description: 'La grossesse est une période parfois stressante. Ce massage est une bouffée d\'oxygène, un moment cocooning extrêmement apprécié! Pratiqué avec une huile neutre.',
+    category: 'Spécialisé'
+  },
+  {
+    id: 6,
+    name: 'Pierres Chaudes',
+    duration: '90 minutes',
+    price: 'CHF 175',
+    description: 'Le massage détente par excellence! Les pierres volcaniques sont chauffées à 55-60°C et diffusent lentement leur chaleur. Il est conseillé de prévoir quelques heures de repos après.',
+    category: 'Premium'
+  },
+  {
+    id: 7,
+    name: 'Gommage Massage 60\'',
+    duration: '90 minutes',
+    price: 'CHF 180',
+    description: 'Gommage de tout le corps à base de sel de l\'Himalaya et de miel. Suivi d\'une douche et d\'un massage de 60\'. Une peau toute douce, un corps totalement détendu!',
+    category: 'Premium'
+  },
+  {
+    id: 8,
+    name: 'Gommage Massage 90\'',
+    duration: '120 minutes',
+    price: 'CHF 215',
+    description: 'Gommage complet suivi d\'un massage de 90 minutes. Le rêve absolu pour une transformation complète!',
+    category: 'Premium'
+  },
+  {
+    id: 9,
+    name: 'Massage à la Bougie',
+    duration: '75 minutes',
+    price: 'CHF 150',
+    description: 'Avec les bougies 100% naturelles de la marque Orli. Beurre de cacao, karité et huiles de jojoba, d\'amandes douces et d\'argan. Fragrances à choix.',
+    category: 'Premium'
+  },
+  {
+    id: 10,
+    name: 'Lomi-Lomi',
+    duration: '90 minutes',
+    price: 'CHF 165',
+    description: 'Massage hawaïen avec des mouvements amples et saccadés, enveloppant et énergisant. Permet un lâcher-prise sur les soucis du quotidien. Huile de Monoï ou de coco chaudes.',
+    category: 'Spécialisé'
+  },
+  {
+    id: 11,
+    name: 'Spécial Pieds',
+    duration: '45 minutes',
+    price: 'CHF 85',
+    description: 'Entre massage thaï, décontractant et réflexologie. C\'est le pied!',
+    category: 'Spécialisé'
+  },
+  {
+    id: 12,
+    name: 'Anti-cellulite',
+    duration: '60 minutes',
+    price: 'CHF 120',
+    description: 'Une peau plus ferme et débarrassée de l\'effet peau d\'orange. Un minimum de 10 séances est requis, conseillé 2 séances par semaine. Doit être supporté par une alimentation saine.',
+    category: 'Spécialisé'
+  },
+  {
+    id: 13,
+    name: 'Tête Nuque Visage',
+    duration: '30 minutes',
+    price: 'CHF 65',
+    description: 'Massage du crâne, de la nuque et du visage. Parfait pour oublier tous ses soucis! Ce soin peut être combiné avec le massage du dos.',
+    category: 'Détente'
+  }
+];
+
+const Massages = () => {
+  const categories = ['Tous', 'Détente', 'Dos', 'Spécialisé', 'Premium'];
+  const [selectedCategory, setSelectedCategory] = React.useState('Tous');
+
+  const filteredMassages = selectedCategory === 'Tous' 
+    ? massagesData 
+    : massagesData.filter(m => m.category === selectedCategory);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
+      {/* Hero Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-emerald-50 to-stone-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-light text-gray-800 mb-6">
+            Massages & Tarifs
+          </h1>
+          <div className="w-24 h-1 bg-emerald-600 mx-auto mb-8"></div>
+          <p className="text-xl text-gray-700 leading-relaxed">
+            Découvrez notre gamme complète de soins personnalisés, 
+            conçus pour répondre à vos besoins uniques de bien-être.
+          </p>
+        </div>
+      </section>
+
+      {/* Category Filter */}
+      <section className="py-8 px-4 bg-white border-b">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map((cat) => (
+              <Button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                variant={selectedCategory === cat ? 'default' : 'outline'}
+                className={`rounded-full px-6 py-2 transition-all duration-300 ${
+                  selectedCategory === cat 
+                    ? 'bg-emerald-700 hover:bg-emerald-800 text-white' 
+                    : 'border-emerald-700 text-emerald-700 hover:bg-emerald-50'
+                }`}
+              >
+                {cat}
+              </Button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Massages Grid */}
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredMassages.map((massage) => (
+              <Card key={massage.id} className="hover:shadow-2xl transition-shadow duration-300 border-none shadow-lg overflow-hidden group">
+                <div className="h-2 bg-gradient-to-r from-emerald-500 to-emerald-700 group-hover:from-emerald-600 group-hover:to-emerald-800 transition-all duration-300"></div>
+                <CardHeader className="pb-4">
+                  <div className="flex justify-between items-start mb-2">
+                    <CardTitle className="text-2xl font-medium text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
+                      {massage.name}
+                    </CardTitle>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                      {massage.category}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-4 text-sm text-gray-600">
+                    <div className="flex items-center gap-1">
+                      <Clock className="h-4 w-4" />
+                      <span>{massage.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Sparkles className="h-4 w-4" />
+                      <span className="font-semibold text-emerald-700">{massage.price}</span>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600 leading-relaxed">
+                    {massage.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-emerald-700 to-emerald-900 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-light mb-6">
+            Prêt à Réserver Votre Séance ?
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Prenez rendez-vous dès maintenant et offrez-vous un moment de pur bien-être.
+          </p>
+          <Link to="/reservation">
+            <Button size="lg" className="bg-white text-emerald-800 hover:bg-gray-100 px-10 py-6 text-lg rounded-full shadow-xl">
+              Réserver Maintenant
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Massages;
