@@ -168,27 +168,18 @@ const Massages = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredMassages.map((massage) => (
-              <Card key={massage.id} className="hover:shadow-2xl transition-all duration-300 border-none shadow-lg overflow-hidden group">
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={massage.image} 
-                    alt={massage.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <span className="absolute top-4 right-4 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/90 text-gray-800 backdrop-blur-sm">
-                    {massage.category}
-                  </span>
-                </div>
-                
+              <Card key={massage.id} className="hover:shadow-2xl transition-shadow duration-300 border-none shadow-lg overflow-hidden group">
                 <div className="h-2 bg-gradient-to-r from-emerald-500 to-emerald-700 group-hover:from-emerald-600 group-hover:to-emerald-800 transition-all duration-300"></div>
-                
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-2xl font-medium text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
-                    {massage.name}
-                  </CardTitle>
-                  <div className="flex items-center gap-4 text-sm text-gray-600 mt-2">
+                  <div className="flex justify-between items-start mb-2">
+                    <CardTitle className="text-2xl font-medium text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
+                      {massage.name}
+                    </CardTitle>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                      {massage.category}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-4 text-sm text-gray-600">
                     <div className="flex items-center gap-1">
                       <Clock className="h-4 w-4" />
                       <span>{massage.duration}</span>
