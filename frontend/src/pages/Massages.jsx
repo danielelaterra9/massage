@@ -195,6 +195,15 @@ const Massages = () => {
                     {massage.description}
                   </CardDescription>
                 </CardContent>
+                <CardFooter className="pt-0">
+                  <Button 
+                    onClick={() => handleBooking(massage.name)}
+                    className="w-full bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg"
+                  >
+                    <Calendar className="mr-2 h-4 w-4" />
+                    Réserver Maintenant
+                  </Button>
+                </CardFooter>
               </Card>
             ))}
           </div>
