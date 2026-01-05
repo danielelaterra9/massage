@@ -10,9 +10,8 @@ const massagesData = [
     name: 'Massage Relaxant',
     duration: '75 minutes',
     price: 'CHF 140',
-    description: 'Massage du corps en entier. N\'hésite pas à me faire part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
-    category: 'Détente',
-    image: 'https://images.unsplash.com/photo-1700522924565-9fad1c05469e?w=800&q=80'
+    description: 'Massage du corps en entier. N\'hésitez pas à me faire part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
+    category: 'Détente'
   },
   {
     id: 2,
@@ -20,8 +19,7 @@ const massagesData = [
     duration: '90 minutes',
     price: 'CHF 165',
     description: 'Massage du corps entier. Pour une complète remise à neuf! N\'hésitez pas à me faire part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
-    category: 'Détente',
-    image: 'https://images.unsplash.com/photo-1741522509438-a120c0bb5e88?w=800&q=80'
+    category: 'Détente'
   },
   {
     id: 3,
@@ -29,8 +27,7 @@ const massagesData = [
     duration: '30 minutes',
     price: 'CHF 65',
     description: 'Massage uniquement relaxant du dos, idéal pour une pause bien-être rapide.',
-    category: 'Dos',
-    image: 'https://images.unsplash.com/photo-1696841212541-449ca29397cc?w=800&q=80'
+    category: 'Dos'
   },
   {
     id: 4,
@@ -38,8 +35,7 @@ const massagesData = [
     duration: '60 minutes',
     price: 'CHF 120',
     description: 'Traite les tensions et blocages du dos avec efficacité. Un soin thérapeutique complet.',
-    category: 'Dos',
-    image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80'
+    category: 'Dos'
   },
   {
     id: 5,
@@ -47,8 +43,7 @@ const massagesData = [
     duration: '60 minutes',
     price: 'CHF 120',
     description: 'La grossesse est une période parfois stressante. Ce massage est une bouffée d\'oxygène, un moment cocooning extrêmement apprécié! Pratiqué avec une huile neutre.',
-    category: 'Spécialisé',
-    image: 'https://images.unsplash.com/photo-1645456040842-221cf6d87e65?w=800&q=80'
+    category: 'Spécialisé'
   },
   {
     id: 6,
@@ -56,8 +51,7 @@ const massagesData = [
     duration: '90 minutes',
     price: 'CHF 175',
     description: 'Le massage détente par excellence! Les pierres volcaniques sont chauffées à 55-60°C et diffusent lentement leur chaleur. Il est conseillé de prévoir quelques heures de repos après.',
-    category: 'Premium',
-    image: 'https://images.unsplash.com/photo-1578413142862-c10be6467b8b?w=800&q=80'
+    category: 'Premium'
   },
   {
     id: 7,
@@ -65,8 +59,7 @@ const massagesData = [
     duration: '90 minutes',
     price: 'CHF 180',
     description: 'Gommage de tout le corps à base de sel de l\'Himalaya et de miel. Suivi d\'une douche et d\'un massage de 60\'. Une peau toute douce, un corps totalement détendu!',
-    category: 'Premium',
-    image: 'https://images.unsplash.com/photo-1620733723572-11c53f73a416?w=800&q=80'
+    category: 'Premium'
   },
   {
     id: 8,
@@ -74,8 +67,7 @@ const massagesData = [
     duration: '120 minutes',
     price: 'CHF 215',
     description: 'Gommage complet suivi d\'un massage de 90 minutes. Le rêve absolu pour une transformation complète!',
-    category: 'Premium',
-    image: 'https://images.unsplash.com/photo-1620733723572-11c53f73a416?w=800&q=80'
+    category: 'Premium'
   },
   {
     id: 9,
@@ -83,8 +75,7 @@ const massagesData = [
     duration: '75 minutes',
     price: 'CHF 150',
     description: 'Avec les bougies 100% naturelles de la marque Orli. Beurre de cacao, karité et huiles de jojoba, d\'amandes douces et d\'argan. Fragrances à choix.',
-    category: 'Premium',
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80'
+    category: 'Premium'
   },
   {
     id: 10,
@@ -92,8 +83,7 @@ const massagesData = [
     duration: '90 minutes',
     price: 'CHF 165',
     description: 'Massage hawaïen avec des mouvements amples et saccadés, enveloppant et énergisant. Permet un lâcher-prise sur les soucis du quotidien. Huile de Monoï ou de coco chaudes.',
-    category: 'Spécialisé',
-    image: 'https://images.pexels.com/photos/35495086/pexels-photo-35495086.jpeg?w=800&q=80'
+    category: 'Spécialisé'
   },
   {
     id: 11,
@@ -101,8 +91,7 @@ const massagesData = [
     duration: '45 minutes',
     price: 'CHF 85',
     description: 'Entre massage thaï, décontractant et réflexologie. C\'est le pied!',
-    category: 'Spécialisé',
-    image: 'https://images.unsplash.com/photo-1706795033796-0057e5864e6d?w=800&q=80'
+    category: 'Spécialisé'
   },
   {
     id: 12,
@@ -110,8 +99,7 @@ const massagesData = [
     duration: '60 minutes',
     price: 'CHF 120',
     description: 'Une peau plus ferme et débarrassée de l\'effet peau d\'orange. Un minimum de 10 séances est requis, conseillé 2 séances par semaine. Doit être supporté par une alimentation saine.',
-    category: 'Spécialisé',
-    image: 'https://images.unsplash.com/photo-1675159364623-6938e10245f0?w=800&q=80'
+    category: 'Spécialisé'
   },
   {
     id: 13,
@@ -119,8 +107,7 @@ const massagesData = [
     duration: '30 minutes',
     price: 'CHF 65',
     description: 'Massage du crâne, de la nuque et du visage. Parfait pour oublier tous ses soucis! Ce soin peut être combiné avec le massage du dos.',
-    category: 'Détente',
-    image: 'https://images.unsplash.com/photo-1706795034830-de41aee06afa?w=800&q=80'
+    category: 'Détente'
   }
 ];
 
