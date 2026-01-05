@@ -4,13 +4,14 @@ import { InlineWidget } from 'react-calendly';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { ExternalLink, Calendar, Clock, CheckCircle } from 'lucide-react';
+import { CALENDLY_CONFIG, isCalendlyConfigured } from '../config/calendly';
 
 const Booking = () => {
   const location = useLocation();
   const selectedMassage = location.state?.selectedMassage || '';
   
-  // Placeholder URL - l'utente dovrà sostituirlo con il proprio link Calendly
-  const calendlyUrl = 'https://calendly.com/[INSERIRE_LINK_CALENDLY]';
+  const calendlyUrl = CALENDLY_CONFIG.CALENDLY_URL;
+  const isConfigured = isCalendlyConfigured();
 
   useEffect(() => {
     // Scroll to top when component mounts
