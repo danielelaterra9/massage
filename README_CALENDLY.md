@@ -25,18 +25,61 @@ Il sito è stato aggiornato con un sistema di prenotazione completamente automat
 4. Imposta pause tra appuntamenti (consigliato: 10-15 minuti)
 5. Configura preavviso minimo per le prenotazioni (opzionale)
 
-### 3. Creare Tipi di Eventi
+### 3. Creare Tipi di Eventi (Event Types) per Ogni Durata
 
-Crea diversi tipi di eventi per i massaggi:
+**IMPORTANTE**: Devi creare un Event Type separato per ogni durata di massaggio. Questo permette a Calendly di mostrare automaticamente solo gli orari disponibili in base alla lunghezza del massaggio.
 
-#### Esempio: Massage Relaxant (75 min)
-- **Nome evento**: Massage Relaxant
-- **Durata**: 75 minuti
-- **Descrizione**: Massage du corps en entier pour une détente complète
-- **Prezzo**: CHF 140 (opzionale nel nome)
-- **Buffer**: 15 minuti
+#### Event Types da Creare:
 
-Ripeti per tutti i tipi di massaggio offerti.
+##### 1. Massage 30 minutes
+- **Nome evento**: Massage 30 min (Dos Détente / Tête Nuque Visage)
+- **Durata**: 30 minuti
+- **Descrizione**: Massage court ciblé pour une détente rapide
+- **Buffer dopo**: 15 minuti
+- **Massaggi inclusi**: Dos Détente, Tête Nuque Visage
+
+##### 2. Massage 45 minutes
+- **Nome evento**: Massage 45 min (Spécial Pieds)
+- **Durata**: 45 minuti
+- **Descrizione**: Massage spécialisé pour les pieds
+- **Buffer dopo**: 15 minuti
+- **Massaggi inclusi**: Spécial Pieds
+
+##### 3. Massage 60 minutes
+- **Nome evento**: Massage 60 min
+- **Durata**: 60 minuti (1 ora)
+- **Descrizione**: Massage d'une heure pour une détente profonde
+- **Buffer dopo**: 15 minuti
+- **Massaggi inclusi**: Dos Profond, Femme Enceinte, Anti-cellulite
+
+##### 4. Massage 75 minutes
+- **Nome evento**: Massage 75 min (Relaxant / Bougie)
+- **Durata**: 75 minuti (1h15)
+- **Descrizione**: Massage relaxant du corps entier
+- **Buffer dopo**: 15 minuti
+- **Massaggi inclusi**: Massage Relaxant, Massage à la Bougie
+
+##### 5. Massage 90 minutes
+- **Nome evento**: Massage 90 min
+- **Durata**: 90 minuti (1h30)
+- **Descrizione**: Massage prolongé pour une remise à neuf complète
+- **Buffer dopo**: 15 minuti
+- **Massaggi inclusi**: Massage Détente Profond, Pierres Chaudes, Lomi-Lomi, Gommage Massage 60'
+
+##### 6. Massage 120 minutes
+- **Nome evento**: Massage 120 min (Gommage Complet)
+- **Durata**: 120 minuti (2 ore)
+- **Descrizione**: Soin complet avec gommage et massage
+- **Buffer dopo**: 15 minuti
+- **Massaggi inclusi**: Gommage Massage 90'
+
+#### Come Funziona:
+Quando un cliente clicca "Réserver Maintenant" su un massaggio specifico (es. "Pierres Chaudes" - 90 min):
+1. Viene reindirizzato al link Calendly per "Massage 90 min"
+2. Calendly mostra **solo gli orari dove hai 90 minuti + buffer disponibili**
+3. Se hai un appuntamento alle 14:00, e questo massaggio dura 90 min + 15 min buffer = 105 min (1h45)
+4. Il prossimo slot disponibile sarà alle 15:45 o dopo
+5. Questo evita sovrapposizioni e garantisce tempo sufficiente
 
 ### 4. Configurare i Campi del Modulo
 
