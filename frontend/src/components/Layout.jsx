@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook } from 'lucide-react';
+import { Phone, MapPin, Menu, X } from 'lucide-react';
 
 const Layout = ({ children }) => {
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isActive = (path) => location.pathname === path;
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -13,12 +18,13 @@ const Layout = ({ children }) => {
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
-            <Link to="/" className="flex items-center gap-3 group">
+            <Link to="/" className="flex items-center gap-3 group" onClick={closeMobileMenu}>
               <div className="text-2xl md:text-3xl font-light text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
                 Institut <span className="font-normal">Kryzalid</span>
               </div>
             </Link>
 
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               <Link
                 to="/"
@@ -53,12 +59,66 @@ const Layout = ({ children }) => {
             </nav>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden text-gray-700">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            <button 
+              className="md:hidden text-gray-700 p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <nav className="md:hidden pb-4 border-t mt-2 pt-4">
+              <div className="flex flex-col gap-3">
+                <Link
+                  to="/"
+                  onClick={closeMobileMenu}
+                  className={`text-base font-medium py-2 px-4 rounded-lg transition-colors duration-300 ${
+                    isActive('/') 
+                      ? 'bg-emerald-50 text-emerald-700' 
+                      : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  Accueil
+                </Link>
+                <Link
+                  to="/about"
+                  onClick={closeMobileMenu}
+                  className={`text-base font-medium py-2 px-4 rounded-lg transition-colors duration-300 ${
+                    isActive('/about') 
+                      ? 'bg-emerald-50 text-emerald-700' 
+                      : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  À Propos
+                </Link>
+                <Link
+                  to="/massages"
+                  onClick={closeMobileMenu}
+                  className={`text-base font-medium py-2 px-4 rounded-lg transition-colors duration-300 ${
+                    isActive('/massages') 
+                      ? 'bg-emerald-50 text-emerald-700' 
+                      : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  Massages & Tarifs
+                </Link>
+                <Link
+                  to="/reservation"
+                  onClick={closeMobileMenu}
+                  className="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-3 rounded-full transition-all duration-300 shadow-md text-center font-medium"
+                >
+                  Réserver
+                </Link>
+              </div>
+            </nav>
+          )}
         </div>
       </header>
 
