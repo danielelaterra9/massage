@@ -3,14 +3,18 @@ import { useLocation } from 'react-router-dom';
 import { InlineWidget } from 'react-calendly';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { ExternalLink, Calendar, Clock, CheckCircle } from 'lucide-react';
-import { CALENDLY_CONFIG, isCalendlyConfigured } from '../config/calendly';
+import { ExternalLink, Calendar, Clock, CheckCircle, Info } from 'lucide-react';
+import { CALENDLY_CONFIG, isCalendlyConfigured, getCalendlyUrlForMassage } from '../config/calendly';
 
 const Booking = () => {
   const location = useLocation();
   const selectedMassage = location.state?.selectedMassage || '';
   
-  const calendlyUrl = CALENDLY_CONFIG.CALENDLY_URL;
+  // Get the specific Calendly URL for the selected massage
+  const calendlyUrl = selectedMassage 
+    ? getCalendlyUrlForMassage(selectedMassage)
+    : CALENDLY_CONFIG.EVENT_TYPES['MASSAGE_60MIN']; // Default to 60 min if no massage selected
+    
   const isConfigured = isCalendlyConfigured();
 
   useEffect(() => {
