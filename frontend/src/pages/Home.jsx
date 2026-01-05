@@ -109,11 +109,11 @@ const Home = () => {
             Prêt à Prendre Soin de Vous ?
           </h2>
           <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-            Offrez-vous un moment de détente et de bien-être. Réservez votre séance dès aujourd'hui.
+            Offrez-vous un moment de détente et de bien-être. Choisissez votre massage.
           </p>
-          <Link to="/reservation">
+          <Link to="/massages">
             <Button size="lg" className="bg-emerald-700 hover:bg-emerald-800 text-white px-10 py-6 text-lg rounded-full shadow-lg">
-              Réserver une Séance
+              Voir les Massages
             </Button>
           </Link>
         </div>
