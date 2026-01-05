@@ -130,9 +130,9 @@ const About = () => {
               sur rendez-vous uniquement.
             </p>
             <div className="mt-8 text-center">
-              <Link to="/reservation">
+              <Link to="/massages">
                 <Button size="lg" className="bg-emerald-700 hover:bg-emerald-800 text-white px-10 py-6 text-lg rounded-full">
-                  Me Contacter
+                  Voir les Massages
                 </Button>
               </Link>
             </div>
