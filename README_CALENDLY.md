@@ -97,21 +97,42 @@ In **Event Settings** → **Questions**, aggiungi:
    - 24 ore prima
    - 1 ora prima (SMS se hai piano premium)
 
-### 6. Inserire il Link nel Sito
+### 6. Inserire i Link nel Sito
 
-1. Copia il tuo link Calendly principale (es: `https://calendly.com/tuonome`)
+1. Dopo aver creato tutti gli Event Types, copia il link di ciascuno
 2. Apri il file: `/app/frontend/src/config/calendly.js`
-3. Sostituisci il placeholder con il tuo link:
+3. Sostituisci ogni placeholder con il link corrispondente:
 
 ```javascript
 export const CALENDLY_CONFIG = {
-  CALENDLY_URL: 'https://calendly.com/tuonome/massage',  // ← Inserisci qui
-  // ... resto della configurazione
+  // ...
+  EVENT_TYPES: {
+    // Per Dos Détente e Tête Nuque Visage
+    'MASSAGE_30MIN': 'https://calendly.com/tuonome/massage-30min',
+    
+    // Per Spécial Pieds
+    'MASSAGE_45MIN': 'https://calendly.com/tuonome/massage-45min',
+    
+    // Per Dos Profond, Femme Enceinte, Anti-cellulite
+    'MASSAGE_60MIN': 'https://calendly.com/tuonome/massage-60min',
+    
+    // Per Massage Relaxant, Massage à la Bougie
+    'MASSAGE_75MIN': 'https://calendly.com/tuonome/massage-75min',
+    
+    // Per Massage Détente Profond, Pierres Chaudes, Lomi-Lomi, Gommage 60'
+    'MASSAGE_90MIN': 'https://calendly.com/tuonome/massage-90min',
+    
+    // Per Gommage Massage 90'
+    'MASSAGE_120MIN': 'https://calendly.com/tuonome/massage-120min',
+  },
+  // ...
 };
 ```
 
 4. Salva il file
-5. Il sistema caricherà automaticamente il widget Calendly
+5. Il sistema caricherà automaticamente il widget Calendly corretto per ogni massaggio
+
+**IMPORTANTE**: Ogni massaggio reindirizza automaticamente al link Calendly con la durata corretta. Il mapping è già configurato nel file `calendly.js`.
 
 ## 📱 Funzionalità Implementate
 
