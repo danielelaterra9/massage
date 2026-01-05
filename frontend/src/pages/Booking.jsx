@@ -47,6 +47,15 @@ const Booking = () => {
               <span className="font-semibold">{selectedMassage}</span>
             </div>
           )}
+          
+          {selectedMassage && (
+            <div className="mt-4 flex items-center justify-center gap-2 text-blue-700 bg-blue-50 px-4 py-2 rounded-lg inline-flex">
+              <Info className="h-5 w-5" />
+              <span className="text-sm">
+                Les créneaux affichés sont adaptés à la durée de ce massage
+              </span>
+            </div>
+          )}
         </div>
       </section>
 
