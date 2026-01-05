@@ -252,6 +252,54 @@ Tutti i testi sono in francese come richiesto:
 - "Si le calendrier ne s'affiche pas, cliquez ici pour réserver."
 - "Réserver Maintenant"
 
+## 📅 Come Funzionano gli Orari Disponibili
+
+### Sistema di Slot Dinamici
+
+Il sistema Calendly con Event Types multipli garantisce che:
+
+1. **Adattamento Automatico alla Durata**
+   - Se prenoti "Massage Relaxant" (75 min), Calendly mostra solo slot dove hai 75 minuti liberi
+   - Se prenoti "Gommage Massage 90'" (120 min), mostra solo slot dove hai 120 minuti liberi
+   - Ogni massaggio ha il suo Event Type con durata specifica
+
+2. **Buffer tra Appuntamenti**
+   - Ogni Event Type ha un buffer di 15 minuti configurato
+   - Questo ti dà tempo per preparare la sala, accogliere il cliente successivo
+   - Esempio: Massage 90 min → occupa 90 + 15 = 105 minuti totali
+
+3. **Prevenzione Sovrapposizioni**
+   - Calendly calcola automaticamente quando sei disponibile
+   - Se hai appuntamento 10:00-11:30 (90 min + 15 buffer = 105 min)
+   - Il prossimo slot disponibile sarà 11:45 o dopo
+   - Il sistema considera: durata del massaggio + buffer + tempo già prenotato
+
+4. **Esempio Pratico**
+   ```
+   Orario: 09:00 - Disponibile
+   Cliente A prenota "Pierres Chaudes" (90 min) alle 09:00
+   
+   Calendly blocca:
+   - 09:00 - 10:30 → Massaggio (90 min)
+   - 10:30 - 10:45 → Buffer (15 min)
+   
+   Prossimo slot disponibile per:
+   - "Dos Détente" (30 min): 10:45
+   - "Massage Relaxant" (75 min): 10:45
+   - "Massage Détente Profond" (90 min): 10:45
+   
+   Tutti i massaggi mostrano 10:45 come primo slot,
+   ma riservano il tempo necessario alla loro durata.
+   ```
+
+### Vantaggi del Sistema
+
+✅ **Zero conflitti** - Impossibile prenotare slot sovrapposti
+✅ **Gestione automatica** - Non devi calcolare manualmente gli orari
+✅ **Flessibilità** - Puoi offrire massaggi di durate diverse nello stesso giorno
+✅ **Buffer incluso** - Tempo garantito tra ogni appuntamento
+✅ **Aggiornamento real-time** - Un cliente prenota → slot sparisce per tutti
+
 ## 🎯 Risultato
 
 Un sistema di prenotazione professionale, automatico e user-friendly che:
