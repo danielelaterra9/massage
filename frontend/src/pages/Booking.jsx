@@ -84,27 +84,40 @@ const Booking = () => {
             <CardContent className="p-0">
               {/* Calendly Inline Widget */}
               <div className="calendly-container bg-white" style={{ minHeight: '700px' }}>
-                <InlineWidget
-                  url={calendlyUrl}
-                  pageSettings={{
-                    backgroundColor: 'ffffff',
-                    hideEventTypeDetails: false,
-                    hideLandingPageDetails: false,
-                    primaryColor: '047857',
-                    textColor: '1f2937'
-                  }}
-                  prefill={{
-                    name: '',
-                    email: '',
-                    customAnswers: selectedMassage ? {
-                      a1: selectedMassage
-                    } : {}
-                  }}
-                  styles={{
-                    height: '700px',
-                    width: '100%'
-                  }}
-                />
+                {isConfigured ? (
+                  <InlineWidget
+                    url={calendlyUrl}
+                    pageSettings={CALENDLY_CONFIG.PAGE_SETTINGS}
+                    prefill={{
+                      name: '',
+                      email: '',
+                      customAnswers: selectedMassage ? {
+                        a1: selectedMassage
+                      } : {}
+                    }}
+                    styles={{
+                      height: '700px',
+                      width: '100%'
+                    }}
+                  />
+                ) : (
+                  <div className="flex items-center justify-center h-full p-12 bg-amber-50">
+                    <div className="text-center max-w-xl">
+                      <div className="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <Calendar className="h-10 w-10 text-amber-700" />
+                      </div>
+                      <h3 className="text-2xl font-medium text-gray-800 mb-4">
+                        Configuration Calendly Requise
+                      </h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed">
+                        Pour activer le système de réservation automatique, veuillez configurer votre lien Calendly dans le fichier <code className="bg-gray-100 px-2 py-1 rounded">/frontend/src/config/calendly.js</code>
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Consultez le fichier de configuration pour les instructions détaillées.
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Fallback Button */}
