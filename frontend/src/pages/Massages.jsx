@@ -114,10 +114,16 @@ const massagesData = [
 const Massages = () => {
   const categories = ['Tous', 'Détente', 'Dos', 'Spécialisé', 'Premium'];
   const [selectedCategory, setSelectedCategory] = React.useState('Tous');
+  const navigate = useNavigate();
 
   const filteredMassages = selectedCategory === 'Tous' 
     ? massagesData 
     : massagesData.filter(m => m.category === selectedCategory);
+
+  const handleBooking = (massageName) => {
+    // Navigate to booking page with pre-selected massage
+    navigate('/reservation', { state: { selectedMassage: massageName } });
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
