@@ -85,7 +85,8 @@ const massagesData = [
     duration: '90 minutes',
     price: 'CHF 165',
     description: 'Massage hawaïen avec des mouvements amples et saccadés, enveloppant et énergisant. Permet un lâcher-prise sur les soucis du quotidien. Huile de Monoï ou de coco chaudes.',
-    category: 'Spécialisé'
+    category: 'Spécialisé',
+    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/pz2ya9rw_lomi%20lomi.png'
   },
   {
     id: 11,
