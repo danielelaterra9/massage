@@ -19,7 +19,8 @@ const massagesData = [
     duration: '90 minutes',
     price: 'CHF 165',
     description: 'Massage du corps entier. Pour une complète remise à neuf! N\'hésitez pas à me faire part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
-    category: 'Détente'
+    category: 'Détente',
+    hasDetailPage: true
   },
   {
     id: 3,
