@@ -186,6 +186,9 @@ const Layout = ({ children }) => {
                 <Link to="/massages" className="block text-gray-400 hover:text-emerald-400 transition-colors">
                   Massages & Tarifs
                 </Link>
+                <Link to="/massage-detente-profonde" className="block text-gray-400 hover:text-emerald-400 transition-colors">
+                  Détente Profonde
+                </Link>
                 <Link to="/reservation" className="block text-gray-400 hover:text-emerald-400 transition-colors">
                   Réservation
                 </Link>
