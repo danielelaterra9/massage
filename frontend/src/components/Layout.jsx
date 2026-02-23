@@ -51,6 +51,14 @@ const Layout = ({ children }) => {
                 Massages & Tarifs
               </Link>
               <Link
+                to="/massage-detente-profonde"
+                className={`text-base font-medium transition-colors duration-300 ${
+                  isActive('/massage-detente-profonde') ? 'text-emerald-700' : 'text-gray-700 hover:text-emerald-700'
+                }`}
+              >
+                Détente Profonde
+              </Link>
+              <Link
                 to="/reservation"
                 className="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
               >
