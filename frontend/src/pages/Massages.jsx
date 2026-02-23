@@ -195,6 +195,14 @@ const Massages = () => {
                   <CardDescription className="text-gray-600 leading-relaxed">
                     {massage.description}
                   </CardDescription>
+                  {massage.hasDetailPage && (
+                    <Link 
+                      to="/massage-detente-profonde"
+                      className="inline-block mt-4 text-emerald-700 hover:text-emerald-800 font-medium underline"
+                    >
+                      En savoir plus sur ce massage →
+                    </Link>
+                  )}
                 </CardContent>
                 <CardFooter className="pt-0">
                   <Button 
