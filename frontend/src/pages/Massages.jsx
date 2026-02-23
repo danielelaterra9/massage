@@ -46,7 +46,8 @@ const massagesData = [
     duration: '60 minutes',
     price: 'CHF 120',
     description: 'La grossesse est une période parfois stressante. Ce massage est une bouffée d\'oxygène, un moment cocooning extrêmement apprécié! Pratiqué avec une huile neutre.',
-    category: 'Spécialisé'
+    category: 'Spécialisé',
+    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/g4rqx80r_femme%20encinte.png'
   },
   {
     id: 6,
