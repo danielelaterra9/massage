@@ -52,7 +52,8 @@ const massagesData = [
     duration: '90 minutes',
     price: 'CHF 175',
     description: 'Le massage détente par excellence! Les pierres volcaniques sont chauffées à 55-60°C et diffusent lentement leur chaleur. Il est conseillé de prévoir quelques heures de repos après.',
-    category: 'Premium'
+    category: 'Premium',
+    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/rlns3bd0_pierres%20chaudes.png'
   },
   {
     id: 7,
