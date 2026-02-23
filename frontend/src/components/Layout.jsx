@@ -118,6 +118,17 @@ const Layout = ({ children }) => {
                   Massages & Tarifs
                 </Link>
                 <Link
+                  to="/massage-detente-profonde"
+                  onClick={closeMobileMenu}
+                  className={`text-base font-medium py-2 px-4 rounded-lg transition-colors duration-300 ${
+                    isActive('/massage-detente-profonde') 
+                      ? 'bg-emerald-50 text-emerald-700' 
+                      : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  Détente Profonde
+                </Link>
+                <Link
                   to="/reservation"
                   onClick={closeMobileMenu}
                   className="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-3 rounded-full transition-all duration-300 shadow-md text-center font-medium"
