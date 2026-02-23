@@ -64,7 +64,8 @@ const massagesData = [
     duration: '90 minutes',
     price: 'CHF 180',
     description: 'Gommage de tout le corps à base de sel de l\'Himalaya et de miel. Suivi d\'une douche et d\'un massage de 60\'. Une peau toute douce, un corps totalement détendu!',
-    category: 'Premium'
+    category: 'Premium',
+    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/87szydj6_gommage%20massage.png'
   },
   {
     id: 8,
@@ -72,7 +73,8 @@ const massagesData = [
     duration: '120 minutes',
     price: 'CHF 215',
     description: 'Gommage complet suivi d\'un massage de 90 minutes. Le rêve absolu pour une transformation complète!',
-    category: 'Premium'
+    category: 'Premium',
+    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/87szydj6_gommage%20massage.png'
   },
   {
     id: 9,
