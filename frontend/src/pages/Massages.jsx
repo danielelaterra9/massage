@@ -103,7 +103,8 @@ const massagesData = [
     duration: '60 minutes',
     price: 'CHF 120',
     description: 'Une peau plus ferme et débarrassée de l\'effet peau d\'orange. Un minimum de 10 séances est requis, conseillé 2 séances par semaine. Doit être supporté par une alimentation saine.',
-    category: 'Spécialisé'
+    category: 'Spécialisé',
+    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/9axd12xb_Soins%20anti-cellulite%20en%20spa%20chaleureux.png'
   },
   {
     id: 13,
