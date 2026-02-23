@@ -94,7 +94,8 @@ const massagesData = [
     duration: '45 minutes',
     price: 'CHF 85',
     description: 'Entre massage thaï, décontractant et réflexologie. C\'est le pied!',
-    category: 'Spécialisé'
+    category: 'Spécialisé',
+    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/r4r4dlxj_special%20pieds.png'
   },
   {
     id: 12,
