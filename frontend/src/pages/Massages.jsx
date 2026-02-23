@@ -112,7 +112,8 @@ const massagesData = [
     duration: '30 minutes',
     price: 'CHF 65',
     description: 'Massage du crâne, de la nuque et du visage. Parfait pour oublier tous ses soucis! Ce soin peut être combiné avec le massage du dos.',
-    category: 'Détente'
+    category: 'Détente',
+    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/r409sg6g_tete.png'
   }
 ];
 
