@@ -247,16 +247,16 @@ const Massages = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-emerald-700 to-emerald-900 text-white">
+      <section className="py-20 px-4 bg-gradient-to-br from-kryzalid-rose to-kryzalid-lavender text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-light mb-6">
+          <h2 className="text-4xl md:text-5xl font-cursive mb-6 drop-shadow-lg">
             Prêt à Réserver Votre Séance ?
           </h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-xl mb-8 opacity-90 font-serif drop-shadow-md">
             Prenez rendez-vous dès maintenant et offrez-vous un moment de pur bien-être.
           </p>
           <Link to="/reservation">
-            <Button size="lg" className="bg-white text-emerald-800 hover:bg-gray-100 px-10 py-6 text-lg rounded-full shadow-xl">
+            <Button size="lg" className="bg-white text-kryzalid-charcoal hover:bg-kryzalid-cream px-10 py-6 text-lg rounded-full shadow-xl font-medium">
               Réserver Maintenant
             </Button>
           </Link>
