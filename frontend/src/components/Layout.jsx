@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       {/* Header */}
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-3 md:py-4">
             <Link to="/" className="flex items-center gap-3 group" onClick={closeMobileMenu}>
               <img 
                 src="https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/nchtw66d_logo%20caro.jpg" 
