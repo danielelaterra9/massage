@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
               </Link>
               <Link
                 to="/reservation"
-                className="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+                className="bg-kryzalid-rose hover:bg-opacity-80 text-kryzalid-charcoal px-6 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg font-medium"
               >
                 Réserver
               </Link>
