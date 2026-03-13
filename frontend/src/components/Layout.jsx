@@ -133,7 +133,7 @@ const Layout = ({ children }) => {
                 <Link
                   to="/reservation"
                   onClick={closeMobileMenu}
-                  className="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-3 rounded-full transition-all duration-300 shadow-md text-center font-medium"
+                  className="bg-kryzalid-rose hover:bg-opacity-80 text-kryzalid-charcoal px-6 py-3 rounded-full transition-all duration-300 shadow-md text-center font-medium"
                 >
                   Réserver
                 </Link>
