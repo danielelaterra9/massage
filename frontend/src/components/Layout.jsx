@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/nchtw66d_logo%20caro.jpg" 
                 alt="Kryzalid Logo" 
-                className="h-16 md:h-20 w-auto object-contain"
+                className="h-24 md:h-28 w-auto object-contain"
               />
             </Link>
 
