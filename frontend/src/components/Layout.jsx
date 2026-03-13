@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
               <Link
                 to="/"
                 className={`text-base font-medium transition-colors duration-300 ${
-                  isActive('/') ? 'text-emerald-700' : 'text-gray-700 hover:text-emerald-700'
+                  isActive('/') ? 'text-kryzalid-rose' : 'text-kryzalid-charcoal hover:text-kryzalid-rose'
                 }`}
               >
                 Accueil
@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
               <Link
                 to="/about"
                 className={`text-base font-medium transition-colors duration-300 ${
-                  isActive('/about') ? 'text-emerald-700' : 'text-gray-700 hover:text-emerald-700'
+                  isActive('/about') ? 'text-kryzalid-rose' : 'text-kryzalid-charcoal hover:text-kryzalid-rose'
                 }`}
               >
                 À Propos
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
               <Link
                 to="/massages"
                 className={`text-base font-medium transition-colors duration-300 ${
-                  isActive('/massages') ? 'text-emerald-700' : 'text-gray-700 hover:text-emerald-700'
+                  isActive('/massages') ? 'text-kryzalid-rose' : 'text-kryzalid-charcoal hover:text-kryzalid-rose'
                 }`}
               >
                 Massages & Tarifs
@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
               <Link
                 to="/massage-detente-profonde"
                 className={`text-base font-medium transition-colors duration-300 ${
-                  isActive('/massage-detente-profonde') ? 'text-emerald-700' : 'text-gray-700 hover:text-emerald-700'
+                  isActive('/massage-detente-profonde') ? 'text-kryzalid-rose' : 'text-kryzalid-charcoal hover:text-kryzalid-rose'
                 }`}
               >
                 Détente Profonde
