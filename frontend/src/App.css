@@ -8,6 +8,12 @@
     min-height: 100vh;
 }
 
+/* Logo butterfly - remove white background */
+img[alt="Kryzalid Butterfly"] {
+    filter: contrast(1.1) brightness(1.05);
+    mix-blend-mode: multiply;
+}
+
 /* Smooth transitions for interactive elements */
 button,
 a {
@@ -34,10 +40,10 @@ a:active {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #059669;
+    background: #C0A0A3;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #047857;
+    background: #a08084;
 }
