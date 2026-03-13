@@ -198,34 +198,34 @@ const Massages = () => {
                 <div className="h-2 bg-gradient-to-r from-kryzalid-rose to-kryzalid-lavender group-hover:from-kryzalid-lavender group-hover:to-kryzalid-rose transition-all duration-300"></div>
                 <CardHeader className="pb-4">
                   <div className={massage.image ? '' : 'flex justify-between items-start mb-2'}>
-                    <CardTitle className="text-2xl font-medium text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
+                    <CardTitle className="text-2xl font-cursive text-kryzalid-charcoal group-hover:text-kryzalid-rose transition-colors duration-300">
                       {massage.name}
                     </CardTitle>
                     {!massage.image && (
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-kryzalid-lavender text-kryzalid-charcoal">
                         {massage.category}
                       </span>
                     )}
                   </div>
-                  <div className="flex items-center gap-4 text-sm text-gray-600 mt-2">
+                  <div className="flex items-center gap-4 text-sm text-kryzalid-grey mt-2">
                     <div className="flex items-center gap-1">
                       <Clock className="h-4 w-4" />
                       <span>{massage.duration}</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Sparkles className="h-4 w-4" />
-                      <span className="font-semibold text-emerald-700">{massage.price}</span>
+                      <span className="font-semibold text-kryzalid-rose">{massage.price}</span>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed">
+                  <CardDescription className="text-kryzalid-grey leading-relaxed font-serif">
                     {massage.description}
                   </CardDescription>
                   {massage.hasDetailPage && (
                     <Link 
                       to="/massage-detente-profonde"
-                      className="inline-block mt-4 text-emerald-700 hover:text-emerald-800 font-medium underline"
+                      className="inline-block mt-4 text-kryzalid-rose hover:text-kryzalid-charcoal font-medium underline"
                     >
                       En savoir plus sur ce massage →
                     </Link>
