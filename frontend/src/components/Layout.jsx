@@ -91,8 +91,8 @@ const Layout = ({ children }) => {
                   onClick={closeMobileMenu}
                   className={`text-base font-medium py-2 px-4 rounded-lg transition-colors duration-300 ${
                     isActive('/') 
-                      ? 'bg-emerald-50 text-emerald-700' 
-                      : 'text-gray-700 hover:bg-gray-50'
+                      ? 'bg-kryzalid-pink text-kryzalid-rose' 
+                      : 'text-kryzalid-charcoal hover:bg-kryzalid-cream'
                   }`}
                 >
                   Accueil
@@ -102,8 +102,8 @@ const Layout = ({ children }) => {
                   onClick={closeMobileMenu}
                   className={`text-base font-medium py-2 px-4 rounded-lg transition-colors duration-300 ${
                     isActive('/about') 
-                      ? 'bg-emerald-50 text-emerald-700' 
-                      : 'text-gray-700 hover:bg-gray-50'
+                      ? 'bg-kryzalid-pink text-kryzalid-rose' 
+                      : 'text-kryzalid-charcoal hover:bg-kryzalid-cream'
                   }`}
                 >
                   À Propos
@@ -113,8 +113,8 @@ const Layout = ({ children }) => {
                   onClick={closeMobileMenu}
                   className={`text-base font-medium py-2 px-4 rounded-lg transition-colors duration-300 ${
                     isActive('/massages') 
-                      ? 'bg-emerald-50 text-emerald-700' 
-                      : 'text-gray-700 hover:bg-gray-50'
+                      ? 'bg-kryzalid-pink text-kryzalid-rose' 
+                      : 'text-kryzalid-charcoal hover:bg-kryzalid-cream'
                   }`}
                 >
                   Massages & Tarifs
@@ -124,8 +124,8 @@ const Layout = ({ children }) => {
                   onClick={closeMobileMenu}
                   className={`text-base font-medium py-2 px-4 rounded-lg transition-colors duration-300 ${
                     isActive('/massage-detente-profonde') 
-                      ? 'bg-emerald-50 text-emerald-700' 
-                      : 'text-gray-700 hover:bg-gray-50'
+                      ? 'bg-kryzalid-pink text-kryzalid-rose' 
+                      : 'text-kryzalid-charcoal hover:bg-kryzalid-cream'
                   }`}
                 >
                   Détente Profonde
