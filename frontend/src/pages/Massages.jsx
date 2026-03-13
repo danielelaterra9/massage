@@ -131,9 +131,9 @@ const Massages = () => {
     ? massagesData 
     : massagesData.filter(m => m.category === selectedCategory);
 
-  const handleBooking = (massageName) => {
-    // Navigate to booking page with pre-selected massage name
-    navigate('/reservation', { state: { selectedMassage: massageName } });
+  const handleBooking = (massage) => {
+    // Navigate to service customization page with full massage object
+    navigate('/customize-service', { state: { selectedService: massage } });
   };
 
   return (
