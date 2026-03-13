@@ -7,12 +7,26 @@ module.exports = {
   ],
   theme: {
   	extend: {
+      fontFamily: {
+        cursive: ['Dancing Script', 'cursive'],
+        serif: ['Lora', 'Georgia', 'serif'],
+        body: ['Lora', 'Georgia', 'serif'],
+      },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+        // Palette from Kryzalid logo
+        kryzalid: {
+          pink: '#FDECEF',
+          lavender: '#E7D7F2',
+          cream: '#FAF0E6',
+          rose: '#C0A0A3',
+          charcoal: '#403C3C',
+          grey: '#777777',
+        },
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
