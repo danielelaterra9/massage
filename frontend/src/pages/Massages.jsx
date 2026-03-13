@@ -153,7 +153,7 @@ const Massages = () => {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 px-4 bg-white border-b">
+      <section className="py-8 px-4 bg-white border-b border-kryzalid-cream">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((cat) => (
@@ -161,10 +161,10 @@ const Massages = () => {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 variant={selectedCategory === cat ? 'default' : 'outline'}
-                className={`rounded-full px-6 py-2 transition-all duration-300 ${
+                className={`rounded-full px-6 py-2 transition-all duration-300 font-medium ${
                   selectedCategory === cat 
-                    ? 'bg-emerald-700 hover:bg-emerald-800 text-white' 
-                    : 'border-emerald-700 text-emerald-700 hover:bg-emerald-50'
+                    ? 'bg-kryzalid-rose hover:bg-opacity-80 text-white' 
+                    : 'border-kryzalid-rose text-kryzalid-charcoal hover:bg-kryzalid-pink'
                 }`}
               >
                 {cat}
