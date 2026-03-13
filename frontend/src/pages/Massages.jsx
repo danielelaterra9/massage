@@ -233,8 +233,8 @@ const Massages = () => {
                 </CardContent>
                 <CardFooter className="pt-0">
                   <Button 
-                    onClick={() => handleBooking(massage.name)}
-                    className="w-full bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg"
+                    onClick={() => handleBooking(massage)}
+                    className="w-full bg-kryzalid-rose hover:bg-opacity-80 text-white rounded-lg font-medium"
                   >
                     <Calendar className="mr-2 h-4 w-4" />
                     Réserver Maintenant
