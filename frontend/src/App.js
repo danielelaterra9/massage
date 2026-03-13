@@ -8,6 +8,7 @@ import Massages from "./pages/Massages";
 import Reservation from "./pages/Reservation";
 import Booking from "./pages/Booking";
 import MassageDetenteProfonde from "./pages/MassageDetenteProfonde";
+import ServiceCustomization from "./pages/ServiceCustomization";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/massages" element={<Massages />} />
             <Route path="/massage-detente-profonde" element={<MassageDetenteProfonde />} />
+            <Route path="/customize-service" element={<ServiceCustomization />} />
             <Route path="/reservation" element={<Booking />} />
             <Route path="/contact" element={<Reservation />} />
           </Routes>
