@@ -188,14 +188,14 @@ const Massages = () => {
                       alt={massage.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                    <span className="absolute top-4 right-4 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/90 text-gray-800 backdrop-blur-sm">
+                    <div className="absolute inset-0 bg-gradient-to-t from-kryzalid-charcoal/60 via-kryzalid-rose/20 to-transparent"></div>
+                    <span className="absolute top-4 right-4 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-kryzalid-cream/90 text-kryzalid-charcoal backdrop-blur-sm">
                       {massage.category}
                     </span>
                   </div>
                 )}
                 
-                <div className="h-2 bg-gradient-to-r from-emerald-500 to-emerald-700 group-hover:from-emerald-600 group-hover:to-emerald-800 transition-all duration-300"></div>
+                <div className="h-2 bg-gradient-to-r from-kryzalid-rose to-kryzalid-lavender group-hover:from-kryzalid-lavender group-hover:to-kryzalid-rose transition-all duration-300"></div>
                 <CardHeader className="pb-4">
                   <div className={massage.image ? '' : 'flex justify-between items-start mb-2'}>
                     <CardTitle className="text-2xl font-medium text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
