@@ -19,12 +19,15 @@ const Layout = ({ children }) => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center py-3 md:py-4">
             <Link to="/" className="flex items-center gap-3 group" onClick={closeMobileMenu}>
-              {/* Butterfly logo */}
-              <img 
-                src="https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/jgfbf9j0_IMG-20260309-WA0005.jpg" 
-                alt="Kryzalid Butterfly" 
-                className="h-12 w-12 md:h-14 md:w-14 object-contain"
-              />
+              {/* Butterfly logo with transparent background */}
+              <div className="relative h-16 w-16 md:h-20 md:w-20">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/jgfbf9j0_IMG-20260309-WA0005.jpg" 
+                  alt="Kryzalid Butterfly" 
+                  className="h-full w-full object-contain"
+                  style={{ mixBlendMode: 'multiply' }}
+                />
+              </div>
               {/* Text with cursive font */}
               <div className="text-3xl md:text-4xl font-cursive text-kryzalid-charcoal group-hover:text-kryzalid-rose transition-colors duration-300">
                 Kryzalid
