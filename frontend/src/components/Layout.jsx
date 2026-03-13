@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       {/* Header */}
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center py-3 md:py-4">
+          <div className="flex justify-between items-center py-4 md:py-6">
             <Link to="/" className="flex items-center gap-4 group" onClick={closeMobileMenu}>
               {/* Butterfly logo with transparent background - 3X LARGER */}
               <div className="relative h-48 w-48 md:h-60 md:w-60">
