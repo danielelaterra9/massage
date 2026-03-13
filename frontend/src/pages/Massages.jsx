@@ -139,13 +139,13 @@ const Massages = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-emerald-50 to-stone-100">
+      <section className="py-20 px-4 bg-gradient-to-br from-kryzalid-pink to-kryzalid-lavender">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-light text-gray-800 mb-6">
+          <h1 className="text-5xl md:text-6xl font-cursive text-kryzalid-charcoal mb-6">
             Massages & Tarifs
           </h1>
-          <div className="w-24 h-1 bg-emerald-600 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-700 leading-relaxed">
+          <div className="w-24 h-1 bg-kryzalid-rose mx-auto mb-8"></div>
+          <p className="text-xl text-kryzalid-charcoal leading-relaxed">
             Découvrez notre gamme complète de soins personnalisés, 
             conçus pour répondre à vos besoins uniques de bien-être.
           </p>
