@@ -19,9 +19,11 @@ const Layout = ({ children }) => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             <Link to="/" className="flex items-center gap-3 group" onClick={closeMobileMenu}>
-              <div className="text-2xl md:text-3xl font-light text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
-                Institut <span className="font-normal">Kryzalid</span>
-              </div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/nchtw66d_logo%20caro.jpg" 
+                alt="Kryzalid Logo" 
+                className="h-16 md:h-20 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Navigation */}
