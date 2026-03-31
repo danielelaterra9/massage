@@ -85,6 +85,25 @@ export const getCalendlyUrlForMassage = (massageName) => {
   return CALENDLY_CONFIG.EVENT_TYPES['MASSAGE_60MIN'];
 };
 
+// Fonction helper pour obtenir le lien Calendly basé sur la durée totale (en minutes)
+// Cette fonction arrondit à la durée Calendly supérieure la plus proche
+export const getCalendlyUrlForDuration = (totalMinutes) => {
+  // Durées disponibles dans Calendly (en minutes)
+  const availableDurations = [30, 45, 60, 75, 90, 120];
+  
+  // Trouver la durée Calendly la plus adaptée (arrondir vers le haut)
+  let selectedDuration = 120; // Par défaut, la plus longue
+  for (const duration of availableDurations) {
+    if (totalMinutes <= duration) {
+      selectedDuration = duration;
+      break;
+    }
+  }
+  
+  const eventTypeKey = `MASSAGE_${selectedDuration}MIN`;
+  return CALENDLY_CONFIG.EVENT_TYPES[eventTypeKey] || CALENDLY_CONFIG.EVENT_TYPES['MASSAGE_60MIN'];
+};
+
 // Fonction helper pour vérifier si le lien Calendly est configuré
 export const isCalendlyConfigured = () => {
   const firstEventType = CALENDLY_CONFIG.EVENT_TYPES['MASSAGE_30MIN'];

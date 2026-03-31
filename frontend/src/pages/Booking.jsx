@@ -3,17 +3,19 @@ import { useLocation } from 'react-router-dom';
 import { InlineWidget } from 'react-calendly';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { ExternalLink, Calendar, Clock, CheckCircle, Info } from 'lucide-react';
-import { CALENDLY_CONFIG, isCalendlyConfigured, getCalendlyUrlForMassage } from '../config/calendly';
+import { ExternalLink, Calendar, Clock, CheckCircle, Info, Sparkles } from 'lucide-react';
+import { CALENDLY_CONFIG, isCalendlyConfigured, getCalendlyUrlForDuration } from '../config/calendly';
 
 const Booking = () => {
   const location = useLocation();
   const selectedMassage = location.state?.selectedMassage || '';
+  const supplementaryServices = location.state?.supplementaryServices || '';
+  const totalDuration = location.state?.totalDuration || 0;
+  const calendlyDuration = location.state?.calendlyDuration || totalDuration + 15;
+  const totalPrice = location.state?.totalPrice || 0;
   
-  // Get the specific Calendly URL for the selected massage
-  const calendlyUrl = selectedMassage 
-    ? getCalendlyUrlForMassage(selectedMassage)
-    : CALENDLY_CONFIG.EVENT_TYPES['MASSAGE_60MIN']; // Default to 60 min if no massage selected
+  // Get the specific Calendly URL based on total duration (including supplementary services)
+  const calendlyUrl = getCalendlyUrlForDuration(calendlyDuration);
     
   const isConfigured = isCalendlyConfigured();
 
@@ -23,72 +25,85 @@ const Booking = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-kryzalid-cream to-white">
       {/* Hero Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-emerald-50 to-stone-100">
+      <section className="py-12 px-4 bg-gradient-to-br from-kryzalid-pink to-kryzalid-lavender">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-block mb-4">
-            <Calendar className="h-16 w-16 text-emerald-700 mx-auto mb-4" />
+            <Calendar className="h-14 w-14 text-kryzalid-rose mx-auto mb-4" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
+          <h1 className="text-4xl md:text-5xl font-cursive text-kryzalid-charcoal mb-4">
             Prendre Rendez-vous
           </h1>
-          <div className="w-24 h-1 bg-emerald-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-700 mb-2 leading-relaxed">
+          <div className="w-24 h-1 bg-kryzalid-rose mx-auto mb-6"></div>
+          <p className="text-xl text-kryzalid-charcoal mb-2 leading-relaxed font-serif">
             Choisissez un créneau disponible. La confirmation est immédiate.
           </p>
-          <p className="text-lg text-gray-600">
-            Vous ne verrez que les horaires pendant lesquels je suis disponible.
-          </p>
-          
-          {selectedMassage && (
-            <div className="mt-6 inline-block bg-emerald-100 text-emerald-800 px-6 py-3 rounded-full">
-              <span className="font-medium">Massage sélectionné: </span>
-              <span className="font-semibold">{selectedMassage}</span>
-            </div>
-          )}
-          
-          {selectedMassage && (
-            <div className="mt-4 flex items-center justify-center gap-2 text-blue-700 bg-blue-50 px-4 py-2 rounded-lg inline-flex">
-              <Info className="h-5 w-5" />
-              <span className="text-sm">
-                Les créneaux affichés sont adaptés à la durée de ce massage
-              </span>
-            </div>
-          )}
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-12 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="h-8 w-8 text-emerald-700" />
-              </div>
-              <h3 className="text-lg font-medium text-gray-800 mb-2">Confirmation Immédiate</h3>
-              <p className="text-gray-600">Votre rendez-vous est confirmé instantanément</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-blue-700" />
-              </div>
-              <h3 className="text-lg font-medium text-gray-800 mb-2">Horaires Disponibles</h3>
-              <p className="text-gray-600">Seuls les créneaux libres sont affichés</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calendar className="h-8 w-8 text-amber-700" />
-              </div>
-              <h3 className="text-lg font-medium text-gray-800 mb-2">Simple et Rapide</h3>
-              <p className="text-gray-600">Réservez en quelques clics seulement</p>
-            </div>
+      {/* Récapitulatif de la réservation */}
+      {selectedMassage && (
+        <section className="py-8 px-4 bg-white border-b border-kryzalid-cream">
+          <div className="max-w-4xl mx-auto">
+            <Card className="border-2 border-kryzalid-rose shadow-xl" data-testid="booking-recap">
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-cursive text-kryzalid-charcoal mb-4 flex items-center gap-2">
+                  <CheckCircle className="h-6 w-6 text-kryzalid-rose" />
+                  Récapitulatif de votre réservation
+                </h3>
+                
+                <div className="space-y-3">
+                  {/* Massage principal */}
+                  <div className="flex justify-between items-center">
+                    <span className="text-kryzalid-charcoal font-medium">Massage sélectionné:</span>
+                    <span className="text-kryzalid-charcoal font-semibold">{selectedMassage}</span>
+                  </div>
+                  
+                  {/* Services supplémentaires */}
+                  {supplementaryServices && (
+                    <div className="flex justify-between items-start">
+                      <span className="text-kryzalid-grey">Services supplémentaires:</span>
+                      <span className="text-kryzalid-charcoal text-right max-w-xs">{supplementaryServices}</span>
+                    </div>
+                  )}
+                  
+                  <div className="border-t border-kryzalid-cream pt-3 mt-3"></div>
+                  
+                  {/* Durée totale */}
+                  <div className="flex justify-between items-center bg-kryzalid-cream/50 rounded-lg p-3">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-5 w-5 text-kryzalid-rose" />
+                      <span className="text-kryzalid-charcoal font-medium">Durée totale du soin:</span>
+                    </div>
+                    <span className="text-xl font-bold text-kryzalid-charcoal" data-testid="booking-duration">
+                      {totalDuration} minutes
+                    </span>
+                  </div>
+                  
+                  {/* Prix total */}
+                  <div className="flex justify-between items-center bg-kryzalid-rose/10 rounded-lg p-3">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="h-5 w-5 text-kryzalid-rose" />
+                      <span className="text-kryzalid-charcoal font-medium">Prix total à régler sur place:</span>
+                    </div>
+                    <span className="text-2xl font-bold text-kryzalid-rose" data-testid="booking-price">
+                      CHF {totalPrice}.-
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="mt-4 flex items-center justify-center gap-2 text-kryzalid-charcoal bg-kryzalid-lavender/50 px-4 py-2 rounded-lg">
+                  <Info className="h-5 w-5" />
+                  <span className="text-sm">
+                    Les créneaux affichés sont adaptés à la durée totale de votre séance
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Calendly Widget Section */}
       <section className="py-12 px-4">
@@ -105,7 +120,7 @@ const Booking = () => {
                       name: '',
                       email: '',
                       customAnswers: selectedMassage ? {
-                        a1: selectedMassage
+                        a1: `${selectedMassage}${supplementaryServices ? ' + ' + supplementaryServices : ''} (${totalDuration} min - CHF ${totalPrice}.-)`
                       } : {}
                     }}
                     styles={{
@@ -114,18 +129,18 @@ const Booking = () => {
                     }}
                   />
                 ) : (
-                  <div className="flex items-center justify-center h-full p-12 bg-amber-50">
+                  <div className="flex items-center justify-center h-full p-12 bg-kryzalid-cream/50">
                     <div className="text-center max-w-xl">
-                      <div className="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Calendar className="h-10 w-10 text-amber-700" />
+                      <div className="w-20 h-20 bg-kryzalid-lavender rounded-full flex items-center justify-center mx-auto mb-6">
+                        <Calendar className="h-10 w-10 text-kryzalid-rose" />
                       </div>
-                      <h3 className="text-2xl font-medium text-gray-800 mb-4">
+                      <h3 className="text-2xl font-cursive text-kryzalid-charcoal mb-4">
                         Configuration Calendly Requise
                       </h3>
-                      <p className="text-gray-600 mb-6 leading-relaxed">
-                        Pour activer le système de réservation automatique, veuillez configurer votre lien Calendly dans le fichier <code className="bg-gray-100 px-2 py-1 rounded">/frontend/src/config/calendly.js</code>
+                      <p className="text-kryzalid-grey mb-6 leading-relaxed font-serif">
+                        Pour activer le système de réservation automatique, veuillez configurer votre lien Calendly dans le fichier <code className="bg-white px-2 py-1 rounded">/frontend/src/config/calendly.js</code>
                       </p>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-kryzalid-grey">
                         Consultez le fichier de configuration pour les instructions détaillées.
                       </p>
                     </div>
@@ -134,8 +149,8 @@ const Booking = () => {
               </div>
 
               {/* Fallback Button */}
-              <div className="p-8 bg-gradient-to-r from-emerald-50 to-stone-50 text-center border-t">
-                <p className="text-gray-700 mb-4">
+              <div className="p-8 bg-gradient-to-r from-kryzalid-pink to-kryzalid-lavender text-center border-t">
+                <p className="text-kryzalid-charcoal mb-4 font-serif">
                   Si le calendrier ne s'affiche pas correctement:
                 </p>
                 <a 
@@ -145,7 +160,7 @@ const Booking = () => {
                 >
                   <Button 
                     size="lg"
-                    className="bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-6 rounded-full shadow-lg"
+                    className="bg-kryzalid-rose hover:bg-opacity-80 text-white px-8 py-6 rounded-full shadow-lg"
                   >
                     <ExternalLink className="mr-2 h-5 w-5" />
                     Ouvrir le Calendrier dans une Nouvelle Page
@@ -158,19 +173,19 @@ const Booking = () => {
       </section>
 
       {/* Contact Alternative Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-emerald-700 to-emerald-900 text-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-kryzalid-rose to-kryzalid-lavender">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-light mb-6">
+          <h2 className="text-3xl md:text-4xl font-cursive text-white mb-6 drop-shadow-lg">
             Besoin d'Aide pour Réserver ?
           </h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-xl mb-8 text-white/90 font-serif">
             N'hésitez pas à me contacter directement par téléphone ou WhatsApp.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+41784440101">
               <Button 
                 size="lg"
-                className="bg-white text-emerald-800 hover:bg-gray-100 px-8 py-6 rounded-full shadow-xl"
+                className="bg-white text-kryzalid-charcoal hover:bg-kryzalid-cream px-8 py-6 rounded-full shadow-xl font-medium"
               >
                 Appeler: +41 78 444 01 01
               </Button>
@@ -183,7 +198,7 @@ const Booking = () => {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-emerald-800 px-8 py-6 rounded-full"
+                className="border-2 border-white text-white hover:bg-white hover:text-kryzalid-charcoal px-8 py-6 rounded-full font-medium"
               >
                 WhatsApp
               </Button>
@@ -195,37 +210,37 @@ const Booking = () => {
       {/* Instructions Section */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-2xl font-light text-center text-gray-800 mb-8">
+          <h3 className="text-2xl font-cursive text-center text-kryzalid-charcoal mb-8">
             Comment Réserver Votre Massage
           </h3>
           <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-emerald-700 text-white rounded-full flex items-center justify-center font-semibold">
+              <div className="flex-shrink-0 w-10 h-10 bg-kryzalid-rose text-white rounded-full flex items-center justify-center font-semibold">
                 1
               </div>
               <div>
-                <h4 className="font-medium text-gray-800 mb-2">Choisissez une Date et Heure</h4>
-                <p className="text-gray-600">Sélectionnez le créneau qui vous convient dans le calendrier ci-dessus.</p>
+                <h4 className="font-medium text-kryzalid-charcoal mb-2">Choisissez une Date et Heure</h4>
+                <p className="text-kryzalid-grey font-serif">Sélectionnez le créneau qui vous convient dans le calendrier ci-dessus.</p>
               </div>
             </div>
             
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-emerald-700 text-white rounded-full flex items-center justify-center font-semibold">
+              <div className="flex-shrink-0 w-10 h-10 bg-kryzalid-rose text-white rounded-full flex items-center justify-center font-semibold">
                 2
               </div>
               <div>
-                <h4 className="font-medium text-gray-800 mb-2">Remplissez Vos Informations</h4>
-                <p className="text-gray-600">Indiquez votre nom, email et numéro de téléphone.</p>
+                <h4 className="font-medium text-kryzalid-charcoal mb-2">Remplissez Vos Informations</h4>
+                <p className="text-kryzalid-grey font-serif">Indiquez votre nom, email et numéro de téléphone.</p>
               </div>
             </div>
             
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-emerald-700 text-white rounded-full flex items-center justify-center font-semibold">
+              <div className="flex-shrink-0 w-10 h-10 bg-kryzalid-rose text-white rounded-full flex items-center justify-center font-semibold">
                 3
               </div>
               <div>
-                <h4 className="font-medium text-gray-800 mb-2">Confirmation Instantanée</h4>
-                <p className="text-gray-600">Vous recevrez immédiatement une confirmation par email avec tous les détails.</p>
+                <h4 className="font-medium text-kryzalid-charcoal mb-2">Confirmation Instantanée</h4>
+                <p className="text-kryzalid-grey font-serif">Vous recevrez immédiatement une confirmation par email avec tous les détails.</p>
               </div>
             </div>
           </div>
