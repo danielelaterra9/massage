@@ -1,9 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
-import { Calendar, Heart, Sparkles } from 'lucide-react';
+import { Calendar, Heart, Sparkles, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const testimonials = [
+  {
+    text: "Quel bonheur de venir se faire masser par Caro! Un pur moment de détente dans un lieu accueillant. La seule chose que vous regretterez, c'est quand la séance se terminera ! N'hésitez pas à faire appel à elle.",
+    author: "Ludo A."
+  },
+  {
+    text: "MAGIQUE ! Un moment précieux de détente et lâcher prise total. Cet état de bien être dure encore longtemps après ! Vraiment efficace pour se reconnecter avec soi-même, se libérer des tracas et se faire du bien tout simplement. Caroline; un mélange de douceur, de bienveillance et d'énergie incroyable ! Elle est aussi surprenante que ses soins ! Je vous recommande vivement de vous offrir ce petit moment hors du temps.",
+    author: "Axelle B."
+  },
+  {
+    text: "Une masseuse en or ! Ambiance cocooning, beaucoup de douceur, connectée à ses intuitions et ses ressentis, juste magique. Je recommande !!!",
+    author: "Manon N."
+  },
+  {
+    text: "Caro offre plus qu'un massage mais un moment de grande détente et de bien être énergétique. Elle masse notre corps avec une réelle intention de faire du bien et cela se ressent ! Merci pour ces instants de pur bonheur.",
+    author: "Emilie R."
+  },
+  {
+    text: "Caroline est à l'écoute non seulement de ce qu'on lui dit mais également de notre corps. Chaque massage est un voyage différent. On se sent en sécurité et tout est mis en place pour passer un moment relaxant et apaisant.",
+    author: "Shannon B."
+  }
+];
 
 const Home = () => {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  // Auto-advance testimonials
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -98,6 +139,73 @@ const Home = () => {
                 Ouvert du lundi matin au samedi midi, sur rendez-vous, pour s'adapter à votre emploi du temps.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Carousel Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-kryzalid-cream">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-cursive text-center text-kryzalid-charcoal mb-4">
+            Ce Que Disent Nos Clients
+          </h2>
+          <div className="w-24 h-1 bg-kryzalid-rose mx-auto mb-12"></div>
+          
+          {/* Carousel Container */}
+          <div className="relative">
+            {/* Testimonial Card */}
+            <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 relative overflow-hidden">
+              {/* Quote Icon */}
+              <div className="absolute top-6 left-6 opacity-10">
+                <Quote className="h-24 w-24 text-kryzalid-rose" />
+              </div>
+              
+              {/* Testimonial Content */}
+              <div className="relative z-10 min-h-[200px] flex flex-col justify-center">
+                <p className="text-lg md:text-xl text-kryzalid-charcoal leading-relaxed font-serif italic text-center mb-8">
+                  "{testimonials[currentTestimonial].text}"
+                </p>
+                <p className="text-kryzalid-rose font-cursive text-2xl text-center">
+                  — {testimonials[currentTestimonial].author}
+                </p>
+              </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute bottom-0 right-0 w-32 h-32 bg-kryzalid-pink rounded-tl-full opacity-50"></div>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-kryzalid-lavender rounded-bl-full opacity-30"></div>
+            </div>
+            
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevTestimonial}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-kryzalid-pink transition-colors duration-300 group"
+              aria-label="Témoignage précédent"
+            >
+              <ChevronLeft className="h-6 w-6 text-kryzalid-charcoal group-hover:text-kryzalid-rose transition-colors" />
+            </button>
+            <button
+              onClick={nextTestimonial}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-kryzalid-pink transition-colors duration-300 group"
+              aria-label="Témoignage suivant"
+            >
+              <ChevronRight className="h-6 w-6 text-kryzalid-charcoal group-hover:text-kryzalid-rose transition-colors" />
+            </button>
+          </div>
+          
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentTestimonial(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentTestimonial
+                    ? 'bg-kryzalid-rose w-8'
+                    : 'bg-kryzalid-rose/30 hover:bg-kryzalid-rose/50'
+                }`}
+                aria-label={`Aller au témoignage ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>
