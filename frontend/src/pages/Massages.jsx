@@ -94,7 +94,8 @@ const massagesData = [
     price: 'CHF 165',
     description: 'Massage hawaïen avec des mouvements amples et saccadés, enveloppant et énergisant. Permet un lâcher-prise sur les soucis du quotidien. Huile de Monoï ou de coco chaudes.',
     category: 'Spécialisé',
-    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/pz2ya9rw_lomi%20lomi.png'
+    image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/qzmi9x20_IMG-20260323-WA0023.jpg',
+    imageCrop: true
   },
   {
     id: 11,
@@ -210,7 +211,9 @@ const Massages = () => {
                     <img 
                       src={massage.image} 
                       alt={massage.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${
+                        massage.imageCrop ? 'scale-[1.4] object-[center_50%]' : ''
+                      }`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-kryzalid-charcoal/60 via-kryzalid-rose/20 to-transparent"></div>
                     <span className="absolute top-4 right-4 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-kryzalid-cream/90 text-kryzalid-charcoal backdrop-blur-sm">
