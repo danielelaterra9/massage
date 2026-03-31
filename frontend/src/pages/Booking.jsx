@@ -70,19 +70,22 @@ const Booking = () => {
                   
                   <div className="border-t border-kryzalid-cream pt-3 mt-3"></div>
                   
-                  {/* Durée totale */}
-                  <div className="flex justify-between items-center bg-kryzalid-cream/50 rounded-lg p-3">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-5 w-5 text-kryzalid-rose" />
-                      <span className="text-kryzalid-charcoal font-medium">Durée totale du soin:</span>
+                  {/* Durée totale - MISE EN ÉVIDENCE */}
+                  <div className="bg-gradient-to-r from-kryzalid-rose to-kryzalid-lavender rounded-xl p-4 text-center">
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <Clock className="h-6 w-6 text-white" />
+                      <span className="text-white font-medium text-lg">DURÉE TOTALE À RÉSERVER</span>
                     </div>
-                    <span className="text-xl font-bold text-kryzalid-charcoal" data-testid="booking-duration">
+                    <span className="text-4xl font-bold text-white" data-testid="booking-duration">
                       {totalDuration} minutes
                     </span>
+                    <p className="text-white/90 text-sm mt-2">
+                      Veuillez sélectionner un créneau de cette durée dans le calendrier
+                    </p>
                   </div>
                   
                   {/* Prix total */}
-                  <div className="flex justify-between items-center bg-kryzalid-rose/10 rounded-lg p-3">
+                  <div className="flex justify-between items-center bg-kryzalid-cream/50 rounded-lg p-4 mt-4">
                     <div className="flex items-center gap-2">
                       <Sparkles className="h-5 w-5 text-kryzalid-rose" />
                       <span className="text-kryzalid-charcoal font-medium">Prix total à régler sur place:</span>
@@ -92,15 +95,19 @@ const Booking = () => {
                     </span>
                   </div>
                 </div>
-                
-                <div className="mt-4 flex items-center justify-center gap-2 text-kryzalid-charcoal bg-kryzalid-lavender/50 px-4 py-2 rounded-lg">
-                  <Info className="h-5 w-5" />
-                  <span className="text-sm">
-                    Les créneaux affichés sont adaptés à la durée totale de votre séance
-                  </span>
-                </div>
               </CardContent>
             </Card>
+            
+            {/* Message d'instruction important */}
+            <div className="mt-6 bg-amber-50 border-2 border-amber-300 rounded-xl p-6 text-center">
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <Info className="h-6 w-6 text-amber-600" />
+                <span className="text-amber-800 font-bold text-lg">IMPORTANT</span>
+              </div>
+              <p className="text-amber-800 text-lg">
+                Dans le calendrier ci-dessous, choisissez un créneau qui correspond à la durée de <strong>{totalDuration} minutes</strong> pour votre séance complète.
+              </p>
+            </div>
           </div>
         </section>
       )}
