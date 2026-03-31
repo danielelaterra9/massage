@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts - Elegant cursive for titles and softer font for body */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Lora', 'Georgia', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family:
+        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Apply elegant cursive font to all headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 99%;
+        --foreground: 18 5% 25%;
+        --card: 0 0% 99%;
+        --card-foreground: 18 5% 25%;
+        --popover: 0 0% 99%;
+        --popover-foreground: 18 5% 25%;
+        --primary: 334 15% 80%;
+        --primary-foreground: 18 5% 25%;
+        --secondary: 270 25% 88%;
+        --secondary-foreground: 18 5% 25%;
+        --muted: 35 15% 96%;
+        --muted-foreground: 0 0% 47%;
+        --accent: 334 15% 88%;
+        --accent-foreground: 18 5% 25%;
+        --destructive: 0 62% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 334 15% 90%;
+        --input: 334 15% 90%;
+        --ring: 334 15% 75%;
+        --chart-1: 334 25% 75%;
+        --chart-2: 270 30% 80%;
+        --chart-3: 35 25% 88%;
+        --chart-4: 0 15% 85%;
+        --chart-5: 300 20% 85%;
+        --radius: 0.5rem;
+    }
+    .dark {
+        --background: 18 5% 12%;
+        --foreground: 0 0% 98%;
+        --card: 18 5% 12%;
+        --card-foreground: 0 0% 98%;
+        --popover: 18 5% 12%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 334 15% 65%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 270 20% 40%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 0 0% 20%;
+        --muted-foreground: 0 0% 64%;
+        --accent: 334 15% 30%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62% 40%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 25%;
+        --input: 0 0% 25%;
+        --ring: 334 15% 55%;
+        --chart-1: 334 25% 55%;
+        --chart-2: 270 30% 60%;
+        --chart-3: 35 25% 68%;
+        --chart-4: 0 15% 65%;
+        --chart-5: 300 20% 65%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}

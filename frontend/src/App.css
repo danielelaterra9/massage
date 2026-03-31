@@ -1,0 +1,49 @@
+/* Custom Styles for Institut Kryzalid */
+
+* {
+    scroll-behavior: smooth;
+}
+
+.App {
+    min-height: 100vh;
+}
+
+/* Logo butterfly - remove white background */
+img[alt="Kryzalid Butterfly"] {
+    filter: contrast(1.1) brightness(1.05);
+    mix-blend-mode: multiply;
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover,
+a:hover {
+    transform: translateY(-2px);
+}
+
+button:active,
+a:active {
+    transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #C0A0A3;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a08084;
+}
