@@ -38,22 +38,22 @@ export const CALENDLY_CONFIG = {
   // Chaque massage avec durée différente doit avoir son propre Event Type
   EVENT_TYPES: {
     // Massages de 30 minutes
-    'MASSAGE_30MIN': 'https://calendly.com/[VOTRE_NOM]/massage-30min',
+    'MASSAGE_30MIN': 'https://calendly.com/massages-kryzalid/massage-30min',
     
     // Massages de 45 minutes
-    'MASSAGE_45MIN': 'https://calendly.com/[VOTRE_NOM]/massage-45min',
+    'MASSAGE_45MIN': 'https://calendly.com/massages-kryzalid/massage-45min',
     
     // Massages de 60 minutes
-    'MASSAGE_60MIN': 'https://calendly.com/[VOTRE_NOM]/massage-60min',
+    'MASSAGE_60MIN': 'https://calendly.com/massages-kryzalid/massage-60min',
     
     // Massages de 75 minutes
-    'MASSAGE_75MIN': 'https://calendly.com/[VOTRE_NOM]/massage-75min',
+    'MASSAGE_75MIN': 'https://calendly.com/massages-kryzalid/massage-75min',
     
     // Massages de 90 minutes
-    'MASSAGE_90MIN': 'https://calendly.com/[VOTRE_NOM]/massage-90min',
+    'MASSAGE_90MIN': 'https://calendly.com/massages-kryzalid/massage-90min',
     
     // Massages de 120 minutes
-    'MASSAGE_120MIN': 'https://calendly.com/[VOTRE_NOM]/massage-120min',
+    'MASSAGE_120MIN': 'https://calendly.com/massages-kryzalid/massage-120min',
   },
   
   // Mapping des massages aux Event Types
