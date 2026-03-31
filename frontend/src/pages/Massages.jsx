@@ -14,7 +14,8 @@ const massagesData = [
     options: [
       { duration: '75 minutes', price: 'CHF 100' },
       { duration: '90 minutes', price: 'CHF 120' }
-    ]
+    ],
+    image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/ixp45b8l_1000050949.jpg'
   },
   {
     id: 2,
