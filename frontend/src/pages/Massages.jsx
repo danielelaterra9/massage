@@ -41,7 +41,7 @@ const massagesData = [
     price: 'CHF 120',
     description: 'Traite les tensions et blocages du dos avec efficacité. Un soin thérapeutique complet.',
     category: 'Dos',
-    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/i8u00nkd_dos%20profond.png'
+    image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/yfdf4nom_IMG-20260323-WA0016.jpg'
   },
   {
     id: 5,
