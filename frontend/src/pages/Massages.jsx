@@ -122,7 +122,7 @@ const massagesData = [
     price: 'CHF 65',
     description: 'Massage du crâne, de la nuque et du visage. Parfait pour oublier tous ses soucis! Ce soin peut être combiné avec le massage du dos.',
     category: 'Détente',
-    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/r409sg6g_tete.png'
+    image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/1pkid9iy_IMG-20260323-WA0012.jpg'
   }
 ];
 
