@@ -32,7 +32,8 @@ const massagesData = [
     duration: '30 minutes',
     price: 'CHF 65',
     description: 'Massage uniquement relaxant du dos, idéal pour une pause bien-être rapide.',
-    category: 'Dos'
+    category: 'Dos',
+    image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/w26trx6a_IMG-20260323-WA0021.jpg'
   },
   {
     id: 4,
