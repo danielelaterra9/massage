@@ -51,6 +51,7 @@ export const CALENDLY_CONFIG = {
   MASSAGE_MAPPING: {
     'Massage Relaxant 75 min': 'MASSAGE_75MIN',
     'Massage Relaxant 90 min': 'MASSAGE_90MIN',
+    'Massage Relaxant': 'MASSAGE_75MIN',
     'Massage Détente Profond': 'MASSAGE_90MIN',
     'Dos Détente': 'MASSAGE_30MIN',
     'Dos Profond': 'MASSAGE_60MIN',

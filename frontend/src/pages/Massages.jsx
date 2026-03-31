@@ -2,24 +2,19 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../components/ui/card';
-import { Clock, Sparkles, Calendar } from 'lucide-react';
+import { Clock, Sparkles, Calendar, Check } from 'lucide-react';
 
 const massagesData = [
   {
     id: 1,
-    name: 'Massage Relaxant 75 min',
-    duration: '75 minutes',
-    price: 'CHF 100',
+    name: 'Massage Relaxant',
     description: 'Un grand moment cocooning! Nos émotions étant liées aux maux physiques, je détermine au toucher et à mon ressenti quelles zones sont à privilégier et de quelle manière. Nous avons tous des besoins spécifiques qui varient au gré des saisons, des émotions, du stress, des évènements de la vie ainsi que des blocages physiques. J\'adapte donc lors de chaque rendez-vous les mouvements, la vitesse et la pression qui conviennent, afin de rendre ce moment vraiment unique, pour votre plus grand bien-être et beaucoup de sérénité. Ma spécialité est d\'harmoniser votre esprit et votre corps pour que vous puissiez vous sentir bien avec eux.',
-    category: 'Détente'
-  },
-  {
-    id: 14,
-    name: 'Massage Relaxant 90 min',
-    duration: '90 minutes',
-    price: 'CHF 120',
-    description: 'Un grand moment cocooning! Nos émotions étant liées aux maux physiques, je détermine au toucher et à mon ressenti quelles zones sont à privilégier et de quelle manière. Nous avons tous des besoins spécifiques qui varient au gré des saisons, des émotions, du stress, des évènements de la vie ainsi que des blocages physiques. J\'adapte donc lors de chaque rendez-vous les mouvements, la vitesse et la pression qui conviennent, afin de rendre ce moment vraiment unique, pour votre plus grand bien-être et beaucoup de sérénité. Ma spécialité est d\'harmoniser votre esprit et votre corps pour que vous puissiez vous sentir bien avec eux.',
-    category: 'Détente'
+    category: 'Détente',
+    hasOptions: true,
+    options: [
+      { duration: '75 minutes', price: 'CHF 100' },
+      { duration: '90 minutes', price: 'CHF 120' }
+    ]
   },
   {
     id: 2,
@@ -133,15 +128,36 @@ const massagesData = [
 const Massages = () => {
   const categories = ['Tous', 'Détente', 'Dos', 'Spécialisé', 'Premium'];
   const [selectedCategory, setSelectedCategory] = React.useState('Tous');
+  const [selectedOptions, setSelectedOptions] = React.useState({});
   const navigate = useNavigate();
 
   const filteredMassages = selectedCategory === 'Tous' 
     ? massagesData 
     : massagesData.filter(m => m.category === selectedCategory);
 
+  const handleOptionSelect = (massageId, optionIndex) => {
+    setSelectedOptions(prev => ({
+      ...prev,
+      [massageId]: optionIndex
+    }));
+  };
+
   const handleBooking = (massage) => {
-    // Navigate to service customization page with full massage object
-    navigate('/customize-service', { state: { selectedService: massage } });
+    let serviceToBook = massage;
+    
+    // If massage has options, use the selected option
+    if (massage.hasOptions && massage.options) {
+      const selectedOptionIndex = selectedOptions[massage.id] ?? 0;
+      const selectedOption = massage.options[selectedOptionIndex];
+      serviceToBook = {
+        ...massage,
+        duration: selectedOption.duration,
+        price: selectedOption.price,
+        name: `${massage.name} ${selectedOption.duration.replace(' minutes', ' min')}`
+      };
+    }
+    
+    navigate('/customize-service', { state: { selectedService: serviceToBook } });
   };
 
   return (
@@ -215,16 +231,54 @@ const Massages = () => {
                       </span>
                     )}
                   </div>
-                  <div className="flex items-center gap-4 text-sm text-kryzalid-grey mt-2">
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      <span>{massage.duration}</span>
+                  
+                  {/* Options de durée/prix si disponibles */}
+                  {massage.hasOptions && massage.options ? (
+                    <div className="mt-3 space-y-2">
+                      {massage.options.map((option, index) => (
+                        <button
+                          key={index}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleOptionSelect(massage.id, index);
+                          }}
+                          className={`w-full flex items-center justify-between p-3 rounded-lg border-2 transition-all duration-200 ${
+                            (selectedOptions[massage.id] ?? 0) === index
+                              ? 'border-kryzalid-rose bg-kryzalid-pink'
+                              : 'border-kryzalid-cream hover:border-kryzalid-rose/50'
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+                              (selectedOptions[massage.id] ?? 0) === index
+                                ? 'border-kryzalid-rose bg-kryzalid-rose'
+                                : 'border-kryzalid-grey'
+                            }`}>
+                              {(selectedOptions[massage.id] ?? 0) === index && (
+                                <Check className="h-3 w-3 text-white" />
+                              )}
+                            </div>
+                            <div className="flex items-center gap-1 text-sm">
+                              <Clock className="h-4 w-4 text-kryzalid-grey" />
+                              <span className="text-kryzalid-charcoal font-medium">{option.duration}</span>
+                            </div>
+                          </div>
+                          <span className="font-semibold text-kryzalid-rose">{option.price}</span>
+                        </button>
+                      ))}
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Sparkles className="h-4 w-4" />
-                      <span className="font-semibold text-kryzalid-rose">{massage.price}</span>
+                  ) : (
+                    <div className="flex items-center gap-4 text-sm text-kryzalid-grey mt-2">
+                      <div className="flex items-center gap-1">
+                        <Clock className="h-4 w-4" />
+                        <span>{massage.duration}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Sparkles className="h-4 w-4" />
+                        <span className="font-semibold text-kryzalid-rose">{massage.price}</span>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-kryzalid-grey leading-relaxed font-serif">
