@@ -7,10 +7,18 @@ import { Clock, Sparkles, Calendar } from 'lucide-react';
 const massagesData = [
   {
     id: 1,
-    name: 'Massage Relaxant',
+    name: 'Massage Relaxant 75 min',
     duration: '75 minutes',
-    price: 'CHF 140',
-    description: 'Massage du corps en entier. N\'hésitez pas à me faire part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
+    price: 'CHF 100',
+    description: 'Un grand moment cocooning! Nos émotions étant liées aux maux physiques, je détermine au toucher et à mon ressenti quelles zones sont à privilégier et de quelle manière. Nous avons tous des besoins spécifiques qui varient au gré des saisons, des émotions, du stress, des évènements de la vie ainsi que des blocages physiques. J\'adapte donc lors de chaque rendez-vous les mouvements, la vitesse et la pression qui conviennent, afin de rendre ce moment vraiment unique, pour votre plus grand bien-être et beaucoup de sérénité. Ma spécialité est d\'harmoniser votre esprit et votre corps pour que vous puissiez vous sentir bien avec eux.',
+    category: 'Détente'
+  },
+  {
+    id: 14,
+    name: 'Massage Relaxant 90 min',
+    duration: '90 minutes',
+    price: 'CHF 120',
+    description: 'Un grand moment cocooning! Nos émotions étant liées aux maux physiques, je détermine au toucher et à mon ressenti quelles zones sont à privilégier et de quelle manière. Nous avons tous des besoins spécifiques qui varient au gré des saisons, des émotions, du stress, des évènements de la vie ainsi que des blocages physiques. J\'adapte donc lors de chaque rendez-vous les mouvements, la vitesse et la pression qui conviennent, afin de rendre ce moment vraiment unique, pour votre plus grand bien-être et beaucoup de sérénité. Ma spécialité est d\'harmoniser votre esprit et votre corps pour que vous puissiez vous sentir bien avec eux.',
     category: 'Détente'
   },
   {

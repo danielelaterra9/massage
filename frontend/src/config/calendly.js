@@ -49,7 +49,8 @@ export const CALENDLY_CONFIG = {
   // Mapping des massages aux Event Types
   // Cela permet de rediriger chaque massage vers le bon lien Calendly
   MASSAGE_MAPPING: {
-    'Massage Relaxant': 'MASSAGE_75MIN',
+    'Massage Relaxant 75 min': 'MASSAGE_75MIN',
+    'Massage Relaxant 90 min': 'MASSAGE_90MIN',
     'Massage Détente Profond': 'MASSAGE_90MIN',
     'Dos Détente': 'MASSAGE_30MIN',
     'Dos Profond': 'MASSAGE_60MIN',
