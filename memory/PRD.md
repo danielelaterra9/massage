@@ -67,4 +67,16 @@ con Event Types separati per ogni durata massaggio.
 Repository GitHub: https://github.com/danielelaterra9/massage.git
 
 ## Next Tasks
-- Utente richiede modifiche (da definire)
+- Configurare i link Calendly personalizzati per ogni durata in `/frontend/src/config/calendly.js`
+
+## Changelog
+### 31 Gennaio 2026
+- Recuperato progetto da GitHub
+- Aggiornata pagina ServiceCustomization con nuovo titolo e 4 servizi supplementari:
+  - Massage du cuir chevelu (10 min - CHF 15)
+  - Massage du visage (10 min - CHF 15)
+  - Cuir chevelu et visage combiné (15 min - CHF 20)
+  - Exfoliation des pieds et massage avec crème nourrissante (20 min - CHF 30)
+- Implementato calcolo dinamico durata totale e prezzo totale
+- Aggiunta funzione getCalendlyUrlForDuration() per selezionare automaticamente il tipo Calendly corretto
+- Aggiornata pagina Booking per mostrare récapitulatif completo con servizi, durata e prezzo totale
