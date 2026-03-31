@@ -34,16 +34,17 @@ export const CALENDLY_CONFIG = {
   // Configuration du fuseau horaire
   TIMEZONE: 'Europe/Zurich',
   
-  // ⚠️ LIENS CALENDLY - Utilise le lien principal pour toutes les durées
-  // Si vous avez des Event Types séparés, remplacez ces liens
+  // ⚠️ LIENS CALENDLY - Configurez vos Event Types pour chaque durée
+  // Pour que le système fonctionne automatiquement, créez des Event Types séparés sur Calendly
+  // avec les durées correspondantes (30, 45, 60, 75, 90, 120 minutes)
   EVENT_TYPES: {
-    // Lien principal Calendly (utilisé pour toutes les durées)
-    'MASSAGE_30MIN': 'https://calendly.com/massages-kryzalid',
-    'MASSAGE_45MIN': 'https://calendly.com/massages-kryzalid',
-    'MASSAGE_60MIN': 'https://calendly.com/massages-kryzalid',
-    'MASSAGE_75MIN': 'https://calendly.com/massages-kryzalid',
-    'MASSAGE_90MIN': 'https://calendly.com/massages-kryzalid',
-    'MASSAGE_120MIN': 'https://calendly.com/massages-kryzalid',
+    // Lien principal Calendly (utilisé si pas d'event type spécifique)
+    'MASSAGE_30MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
+    'MASSAGE_45MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
+    'MASSAGE_60MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
+    'MASSAGE_75MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
+    'MASSAGE_90MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
+    'MASSAGE_120MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
   },
   
   // Mapping des massages aux Event Types
