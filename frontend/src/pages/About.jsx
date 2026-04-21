@@ -122,8 +122,8 @@ const About = () => {
             </p>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               L'ambiance y est <strong>bienveillante et chaleureuse</strong>. Nous avons tous 
-              à cœur de rendre la vie de nos clients plus douce et de créer un espace où 
-              le bien-être est au centre de nos préoccupations.
+              à cœur de rendre la vie de mes clients plus douce et de créer un espace où 
+              le bien-être est au centre de mes préoccupations.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
               C'est avec plaisir que je vous accueille <strong>du lundi matin au samedi midi</strong>, 

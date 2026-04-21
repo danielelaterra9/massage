@@ -19,8 +19,8 @@ const Home = () => {
         
         <div className="relative z-10 text-center text-kryzalid-charcoal px-4 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-cursive mb-6 tracking-wide drop-shadow-lg">
-            Votre Bien-Être,
-            <span className="block mt-2">Notre Passion</span>
+            Votre Bien-Ê-tre,
+            <span className="block mt-2">Ma Passion</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 font-serif leading-relaxed max-w-2xl mx-auto drop-shadow-md">
             Chaque massage est une expérience unique, adaptée à vos besoins physiques et émotionnels
@@ -34,7 +34,7 @@ const Home = () => {
             </Link>
             <Link to="/massages">
               <Button size="lg" variant="outline" className="border-2 border-kryzalid-charcoal text-kryzalid-charcoal hover:bg-kryzalid-pink px-8 py-6 text-lg rounded-full font-medium">
-                Découvrir nos Soins
+                Découvrir mes Soins
               </Button>
             </Link>
           </div>
