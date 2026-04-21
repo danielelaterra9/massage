@@ -9,16 +9,16 @@ const massagesData = [
     id: 1,
     name: 'Massage Relaxant',
     duration: '75 minutes',
-    price: 'CHF 140',
-    description: 'Massage du corps en entier. N\'hésitez pas à me faire part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
+    price: 'CHF 100',
+    description: 'Massage du corps en entier. N\'hésitez pas à me fare part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
     category: 'Détente'
   },
   {
     id: 2,
     name: 'Massage Détente Profond',
     duration: '90 minutes',
-    price: 'CHF 165',
-    description: 'Massage du corps entier. Pour une complète remise à neuf! N\'hésitez pas à me faire part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
+    price: 'CHF 120',
+    description: 'Massage du corps entier. Pour une complète remise à neuf! N\'hésitez pas à me fare part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
     category: 'Détente',
     hasDetailPage: true,
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/oo31kawa_detente%20profond.png'
@@ -26,25 +26,33 @@ const massagesData = [
   {
     id: 3,
     name: 'Dos Détente',
-    duration: '30 minutes',
-    price: 'CHF 65',
+    duration: '35 minutes',
+    price: 'CHF 60',
     description: 'Massage uniquement relaxant du dos, idéal pour une pause bien-être rapide.',
     category: 'Dos'
   },
   {
     id: 4,
-    name: 'Dos Profond',
-    duration: '60 minutes',
-    price: 'CHF 120',
+    name: 'Dos Profond 45',
+    duration: '45 minutes',
+    price: 'CHF 70',
     description: 'Traite les tensions et blocages du dos avec efficacité. Un soin thérapeutique complet.',
     category: 'Dos',
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/i8u00nkd_dos%20profond.png'
   },
   {
+    id: 41,
+    name: 'Dos Profond 60',
+    duration: '60 minutes',
+    price: 'CHF 80',
+    description: 'Traite les tensions et blocages du dos avec efficacité. Un soin thérapeutique complet di un\'ora.',
+    category: 'Dos'
+  },
+  {
     id: 5,
     name: 'Femme Enceinte',
-    duration: '60 minutes',
-    price: 'CHF 120',
+    duration: '75 minutes',
+    price: 'CHF 100',
     description: 'La grossesse est une période parfois stressante. Ce massage est une bouffée d\'oxygène, un moment cocooning extrêmement apprécié! Pratiqué avec une huile neutre.',
     category: 'Spécialisé',
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/g4rqx80r_femme%20encinte.png'
@@ -52,27 +60,27 @@ const massagesData = [
   {
     id: 6,
     name: 'Pierres Chaudes',
-    duration: '90 minutes',
-    price: 'CHF 175',
+    duration: '75 minutes',
+    price: 'CHF 140',
     description: 'Le massage détente par excellence! Les pierres volcaniques sont chauffées à 55-60°C et diffusent lentement leur chaleur. Il est conseillé de prévoir quelques heures de repos après.',
     category: 'Premium',
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/rlns3bd0_pierres%20chaudes.png'
   },
   {
     id: 7,
-    name: 'Gommage Massage 60\'',
-    duration: '90 minutes',
-    price: 'CHF 180',
-    description: 'Gommage de tout le corps à base de sel de l\'Himalaya et de miel. Suivi d\'une douche et d\'un massage de 60\'. Une peau toute douce, un corps totalement détendu!',
+    name: 'Gommage Massage 120\'',
+    duration: '120 minutes',
+    price: 'CHF 160',
+    description: 'Gommage de tout le corps à base de sel de l\'Himalaya et de miel. Suivi d\'une douche et d\'un massage di 120\'. Une peau toute douce, un corps totalement détendu!',
     category: 'Premium',
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/87szydj6_gommage%20massage.png'
   },
   {
     id: 8,
-    name: 'Gommage Massage 90\'',
-    duration: '120 minutes',
-    price: 'CHF 215',
-    description: 'Gommage complet suivi d\'un massage de 90 minutes. Le rêve absolu pour une transformation complète!',
+    name: 'Gommage Massage 150\'',
+    duration: '150 minutes',
+    price: 'CHF 200',
+    description: 'Gommage complet suivi d\'un massage de 150 minutes. Le rêve absolu pour una trasformatione completa!',
     category: 'Premium',
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/87szydj6_gommage%20massage.png'
   },
@@ -80,15 +88,15 @@ const massagesData = [
     id: 9,
     name: 'Massage à la Bougie',
     duration: '75 minutes',
-    price: 'CHF 150',
+    price: 'CHF 115',
     description: 'Avec les bougies 100% naturelles de la marque Orli. Beurre de cacao, karité et huiles de jojoba, d\'amandes douces et d\'argan. Fragrances à choix.',
     category: 'Premium'
   },
   {
     id: 10,
     name: 'Lomi-Lomi',
-    duration: '90 minutes',
-    price: 'CHF 165',
+    duration: '75 minutes',
+    price: 'CHF 115',
     description: 'Massage hawaïen avec des mouvements amples et saccadés, enveloppant et énergisant. Permet un lâcher-prise sur les soucis du quotidien. Huile de Monoï ou de coco chaudes.',
     category: 'Spécialisé',
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/pz2ya9rw_lomi%20lomi.png'
@@ -96,8 +104,8 @@ const massagesData = [
   {
     id: 11,
     name: 'Spécial Pieds',
-    duration: '45 minutes',
-    price: 'CHF 85',
+    duration: '60 minutes',
+    price: 'CHF 80',
     description: 'Entre massage thaï, décontractant et réflexologie. C\'est le pied!',
     category: 'Spécialisé',
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/r4r4dlxj_special%20pieds.png'
@@ -105,8 +113,8 @@ const massagesData = [
   {
     id: 12,
     name: 'Anti-cellulite',
-    duration: '60 minutes',
-    price: 'CHF 120',
+    duration: '40 minutes',
+    price: 'CHF 50',
     description: 'Une peau plus ferme et débarrassée de l\'effet peau d\'orange. Un minimum de 10 séances est requis, conseillé 2 séances par semaine. Doit être supporté par une alimentation saine.',
     category: 'Spécialisé',
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/9axd12xb_Soins%20anti-cellulite%20en%20spa%20chaleureux.png'
@@ -115,7 +123,7 @@ const massagesData = [
     id: 13,
     name: 'Tête Nuque Visage',
     duration: '30 minutes',
-    price: 'CHF 65',
+    price: 'CHF 50',
     description: 'Massage du crâne, de la nuque et du visage. Parfait pour oublier tous ses soucis! Ce soin peut être combiné avec le massage du dos.',
     category: 'Détente',
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/r409sg6g_tete.png'
@@ -146,7 +154,7 @@ const Massages = () => {
           </h1>
           <div className="w-24 h-1 bg-kryzalid-rose mx-auto mb-8"></div>
           <p className="text-xl text-kryzalid-charcoal leading-relaxed">
-            Découvrez notre gamme complète de soins personnalisés, 
+            Découvrez ma gamme complète de soins personnalisés, 
             conçus pour répondre à vos besoins uniques de bien-être.
           </p>
         </div>
