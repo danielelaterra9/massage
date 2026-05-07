@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
           <div className="flex justify-between items-center py-2 md:py-3">
             <Link to="/" className="flex items-center gap-3 group" onClick={closeMobileMenu}>
               {/* Butterfly logo with transparent background */}
-              <div className="relative h-16 w-16 md:h-20 md:w-20">
+              <div className="relative h-20 w-20 md:h-28 md:w-28">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/jgfbf9j0_IMG-20260309-WA0005.jpg" 
                   alt="Kryzalid Butterfly" 
@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
                 />
               </div>
               {/* Text with cursive font */}
-              <div className="text-3xl md:text-4xl font-cursive text-kryzalid-charcoal group-hover:text-kryzalid-rose transition-colors duration-300">
+              <div className="text-4xl md:text-5xl font-cursive text-kryzalid-charcoal group-hover:text-kryzalid-rose transition-colors duration-300">
                 Kryzalid
               </div>
             </Link>
