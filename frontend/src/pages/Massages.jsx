@@ -29,10 +29,10 @@ const massagesData = [
   },
   {
     id: 3,
-    name: 'Dos Détente',
-    duration: '30 minutes',
-    price: 'CHF 65',
-    description: 'Massage uniquement relaxant du dos, idéal pour une pause bien-être rapide.',
+    name: 'Massage du Dos',
+    duration: '45 minutes',
+    price: 'CHF 70',
+    description: 'Massage relaxant du dos, idéal pour une pause bien-être.',
     category: 'Dos',
     image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/w26trx6a_IMG-20260323-WA0021.jpg'
   },
@@ -57,8 +57,8 @@ const massagesData = [
   {
     id: 6,
     name: 'Pierres Chaudes',
-    duration: '90 minutes',
-    price: 'CHF 175',
+    duration: '75 minutes',
+    price: 'CHF 140',
     description: 'Le massage détente par excellence! Les pierres volcaniques sont chauffées à 55-60°C et diffusent lentement leur chaleur. Il est conseillé de prévoir quelques heures de repos après.',
     category: 'Premium',
     image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/ipia6zm4_IMG-20260323-WA0022.jpg'
@@ -92,8 +92,8 @@ const massagesData = [
   {
     id: 10,
     name: 'Lomi-Lomi',
-    duration: '90 minutes',
-    price: 'CHF 165',
+    duration: '75 minutes',
+    price: 'CHF 120',
     description: 'Massage hawaïen avec des mouvements amples et saccadés, enveloppant et énergisant. Permet un lâcher-prise sur les soucis du quotidien. Huile de Monoï ou de coco chaudes.',
     category: 'Spécialisé',
     image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/qzmi9x20_IMG-20260323-WA0023.jpg',
@@ -101,9 +101,9 @@ const massagesData = [
   },
   {
     id: 11,
-    name: 'Spécial Pieds',
-    duration: '45 minutes',
-    price: 'CHF 85',
+    name: 'Massage des Pieds et Réflexologie',
+    duration: '75 minutes',
+    price: 'CHF 100',
     description: 'Entre massage thaï, décontractant et réflexologie. C\'est le pied!',
     category: 'Spécialisé',
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/r4r4dlxj_special%20pieds.png'
@@ -111,18 +111,18 @@ const massagesData = [
   {
     id: 12,
     name: 'Anti-cellulite',
-    duration: '60 minutes',
-    price: 'CHF 120',
+    duration: '45 minutes',
+    price: 'CHF 70',
     description: 'Une peau plus ferme et débarrassée de l\'effet peau d\'orange. Un minimum de 10 séances est requis, conseillé 2 séances par semaine. Doit être supporté par une alimentation saine.',
     category: 'Spécialisé',
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/9axd12xb_Soins%20anti-cellulite%20en%20spa%20chaleureux.png'
   },
   {
     id: 13,
-    name: 'Tête Nuque Visage',
-    duration: '30 minutes',
-    price: 'CHF 65',
-    description: 'Massage du crâne, de la nuque et du visage. Parfait pour oublier tous ses soucis! Ce soin peut être combiné avec le massage du dos.',
+    name: 'Tête, Nuque, Visage et Dos',
+    duration: '75 minutes',
+    price: 'CHF 100',
+    description: 'Massage du crâne, de la nuque, du visage et du dos. Parfait pour oublier tous ses soucis!',
     category: 'Détente',
     image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/1pkid9iy_IMG-20260323-WA0012.jpg'
   }
