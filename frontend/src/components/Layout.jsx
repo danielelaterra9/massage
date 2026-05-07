@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
           <div className="flex justify-between items-center py-2 md:py-3">
             <Link to="/" className="flex items-center gap-2 group" onClick={closeMobileMenu}>
               {/* Butterfly logo - LARGER */}
-              <div className="relative h-24 w-24 md:h-32 md:w-32">
+              <div className="relative h-24 w-24 md:h-44 md:w-44">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/jgfbf9j0_IMG-20260309-WA0005.jpg" 
                   alt="Kryzalid Butterfly" 
