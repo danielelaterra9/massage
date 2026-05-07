@@ -35,16 +35,13 @@ export const CALENDLY_CONFIG = {
   TIMEZONE: 'Europe/Zurich',
   
   // ⚠️ LIENS CALENDLY - Configurez vos Event Types pour chaque durée
-  // Pour que le système fonctionne automatiquement, créez des Event Types séparés sur Calendly
-  // avec les durées correspondantes (30, 45, 60, 75, 90, 120 minutes)
+  // Chaque slot est de 45 minutes
+  // 1 slot = 45 min, 2 slots = 90 min, 3 slots = 135 min
   EVENT_TYPES: {
-    // Lien principal Calendly (utilisé si pas d'event type spécifique)
-    'MASSAGE_30MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
     'MASSAGE_45MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
-    'MASSAGE_60MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
-    'MASSAGE_75MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
     'MASSAGE_90MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
-    'MASSAGE_120MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
+    'MASSAGE_135MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
+    'MASSAGE_180MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
   },
   
   // Mapping des massages aux Event Types
@@ -79,22 +76,14 @@ export const getCalendlyUrlForMassage = (massageName) => {
 };
 
 // Fonction helper pour obtenir le lien Calendly basé sur la durée totale (en minutes)
-// Cette fonction arrondit à la durée Calendly supérieure la plus proche
+// Arrondit au nombre de slots de 45 minutes nécessaires
 export const getCalendlyUrlForDuration = (totalMinutes) => {
-  // Durées disponibles dans Calendly (en minutes)
-  const availableDurations = [30, 45, 60, 75, 90, 120];
+  // Chaque slot est de 45 minutes
+  const slots = Math.ceil(totalMinutes / 45);
+  const slotDuration = slots * 45;
   
-  // Trouver la durée Calendly la plus adaptée (arrondir vers le haut)
-  let selectedDuration = 120; // Par défaut, la plus longue
-  for (const duration of availableDurations) {
-    if (totalMinutes <= duration) {
-      selectedDuration = duration;
-      break;
-    }
-  }
-  
-  const eventTypeKey = `MASSAGE_${selectedDuration}MIN`;
-  return CALENDLY_CONFIG.EVENT_TYPES[eventTypeKey] || CALENDLY_CONFIG.EVENT_TYPES['MASSAGE_60MIN'];
+  const eventTypeKey = `MASSAGE_${slotDuration}MIN`;
+  return CALENDLY_CONFIG.EVENT_TYPES[eventTypeKey] || CALENDLY_CONFIG.EVENT_TYPES['MASSAGE_45MIN'];
 };
 
 // Fonction helper pour vérifier si le lien Calendly est configuré
