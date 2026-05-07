@@ -19,44 +19,7 @@ const massagesData = [
   },
   {
     id: 2,
-    name: 'Massage Détente Profond',
-    duration: '90 minutes',
-    price: 'CHF 165',
-    description: 'Massage du corps entier. Pour une complète remise à neuf! N\'hésitez pas à me faire part des zones du corps que vous souhaitez privilégier ou au contraire éviter.',
-    category: 'Détente',
-    hasDetailPage: true,
-    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/oo31kawa_detente%20profond.png'
-  },
-  {
-    id: 3,
-    name: 'Massage du Dos',
-    duration: '45 minutes',
-    price: 'CHF 70',
-    description: 'Massage relaxant du dos, idéal pour une pause bien-être.',
-    category: 'Dos',
-    image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/w26trx6a_IMG-20260323-WA0021.jpg'
-  },
-  {
-    id: 4,
-    name: 'Dos Profond',
-    duration: '60 minutes',
-    price: 'CHF 120',
-    description: 'Traite les tensions et blocages du dos avec efficacité. Un soin thérapeutique complet.',
-    category: 'Dos',
-    image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/yfdf4nom_IMG-20260323-WA0016.jpg'
-  },
-  {
-    id: 5,
-    name: 'Femme Enceinte',
-    duration: '60 minutes',
-    price: 'CHF 120',
-    description: 'La grossesse est une période parfois stressante. Ce massage est une bouffée d\'oxygène, un moment cocooning extrêmement apprécié! Pratiqué avec une huile neutre.',
-    category: 'Spécialisé',
-    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/g4rqx80r_femme%20encinte.png'
-  },
-  {
-    id: 6,
-    name: 'Pierres Chaudes',
+    name: 'Massage aux Pierres Chaudes',
     duration: '75 minutes',
     price: 'CHF 140',
     description: 'Le massage détente par excellence! Les pierres volcaniques sont chauffées à 55-60°C et diffusent lentement leur chaleur. Il est conseillé de prévoir quelques heures de repos après.',
@@ -64,34 +27,8 @@ const massagesData = [
     image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/ipia6zm4_IMG-20260323-WA0022.jpg'
   },
   {
-    id: 7,
-    name: 'Gommage Massage 60\'',
-    duration: '90 minutes',
-    price: 'CHF 180',
-    description: 'Gommage de tout le corps à base de sel de l\'Himalaya et de miel. Suivi d\'une douche et d\'un massage de 60\'. Une peau toute douce, un corps totalement détendu!',
-    category: 'Premium',
-    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/87szydj6_gommage%20massage.png'
-  },
-  {
-    id: 8,
-    name: 'Gommage Massage 90\'',
-    duration: '120 minutes',
-    price: 'CHF 215',
-    description: 'Gommage complet suivi d\'un massage de 90 minutes. Le rêve absolu pour une transformation complète!',
-    category: 'Premium',
-    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/87szydj6_gommage%20massage.png'
-  },
-  {
-    id: 9,
-    name: 'Massage à la Bougie',
-    duration: '75 minutes',
-    price: 'CHF 150',
-    description: 'Avec les bougies 100% naturelles de la marque Orli. Beurre de cacao, karité et huiles de jojoba, d\'amandes douces et d\'argan. Fragrances à choix.',
-    category: 'Premium'
-  },
-  {
-    id: 10,
-    name: 'Lomi-Lomi',
+    id: 3,
+    name: 'Massage Lomi-Lomi',
     duration: '75 minutes',
     price: 'CHF 120',
     description: 'Massage hawaïen avec des mouvements amples et saccadés, enveloppant et énergisant. Permet un lâcher-prise sur les soucis du quotidien. Huile de Monoï ou de coco chaudes.',
@@ -100,7 +37,25 @@ const massagesData = [
     imageCrop: true
   },
   {
-    id: 11,
+    id: 4,
+    name: 'Massage du Dos',
+    duration: '45 minutes',
+    price: 'CHF 70',
+    description: 'Massage relaxant du dos, idéal pour une pause bien-être.',
+    category: 'Détente',
+    image: 'https://customer-assets.emergentagent.com/job_spa-connect-4/artifacts/w26trx6a_IMG-20260323-WA0021.jpg'
+  },
+  {
+    id: 5,
+    name: 'Massage Anti-cellulite',
+    duration: '45 minutes',
+    price: 'CHF 70',
+    description: 'Une peau plus ferme et débarrassée de l\'effet peau d\'orange. Un minimum de 10 séances est requis, conseillé 2 séances par semaine. Doit être supporté par une alimentation saine.',
+    category: 'Spécialisé',
+    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/9axd12xb_Soins%20anti-cellulite%20en%20spa%20chaleureux.png'
+  },
+  {
+    id: 6,
     name: 'Massage des Pieds et Réflexologie',
     duration: '75 minutes',
     price: 'CHF 100',
@@ -109,17 +64,26 @@ const massagesData = [
     image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/r4r4dlxj_special%20pieds.png'
   },
   {
-    id: 12,
-    name: 'Anti-cellulite',
+    id: 7,
+    name: 'Gommage du Corps',
     duration: '45 minutes',
     price: 'CHF 70',
-    description: 'Une peau plus ferme et débarrassée de l\'effet peau d\'orange. Un minimum de 10 séances est requis, conseillé 2 séances par semaine. Doit être supporté par une alimentation saine.',
-    category: 'Spécialisé',
-    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/9axd12xb_Soins%20anti-cellulite%20en%20spa%20chaleureux.png'
+    description: 'Gommage de tout le corps à base de sel de l\'Himalaya et de miel. Une peau toute douce!',
+    category: 'Premium',
+    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/87szydj6_gommage%20massage.png'
   },
   {
-    id: 13,
-    name: 'Tête, Nuque, Visage et Dos',
+    id: 8,
+    name: 'Gommage du Corps avec Massage',
+    duration: '90 minutes',
+    price: 'CHF 140',
+    description: 'Gommage complet suivi d\'un massage relaxant. Le rêve absolu pour une transformation complète!',
+    category: 'Premium',
+    image: 'https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/87szydj6_gommage%20massage.png'
+  },
+  {
+    id: 9,
+    name: 'Massage Tête, Nuque, Visage et Dos',
     duration: '75 minutes',
     price: 'CHF 100',
     description: 'Massage du crâne, de la nuque, du visage et du dos. Parfait pour oublier tous ses soucis!',
@@ -129,7 +93,7 @@ const massagesData = [
 ];
 
 const Massages = () => {
-  const categories = ['Tous', 'Détente', 'Dos', 'Spécialisé', 'Premium'];
+  const categories = ['Tous', 'Détente', 'Spécialisé', 'Premium'];
   const [selectedCategory, setSelectedCategory] = React.useState('Tous');
   const [selectedOptions, setSelectedOptions] = React.useState({});
   const navigate = useNavigate();
