@@ -18,9 +18,9 @@ const Layout = ({ children }) => {
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center py-2 md:py-3">
-            <Link to="/" className="flex items-center gap-3 group" onClick={closeMobileMenu}>
-              {/* Butterfly logo with transparent background */}
-              <div className="relative h-20 w-20 md:h-28 md:w-28">
+            <Link to="/" className="flex items-center gap-2 group" onClick={closeMobileMenu}>
+              {/* Butterfly logo - LARGER */}
+              <div className="relative h-24 w-24 md:h-32 md:w-32">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/jgfbf9j0_IMG-20260309-WA0005.jpg" 
                   alt="Kryzalid Butterfly" 
@@ -28,8 +28,8 @@ const Layout = ({ children }) => {
                   style={{ mixBlendMode: 'multiply' }}
                 />
               </div>
-              {/* Text with cursive font */}
-              <div className="text-4xl md:text-5xl font-cursive text-kryzalid-charcoal group-hover:text-kryzalid-rose transition-colors duration-300">
+              {/* Text - smaller */}
+              <div className="text-3xl md:text-4xl font-cursive text-kryzalid-charcoal group-hover:text-kryzalid-rose transition-colors duration-300">
                 Kryzalid
               </div>
             </Link>
