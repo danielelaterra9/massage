@@ -3,8 +3,8 @@ import { useLocation } from 'react-router-dom';
 import { InlineWidget } from 'react-calendly';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { ExternalLink, Calendar, Clock, CheckCircle, Sparkles, AlertCircle } from 'lucide-react';
-import { CALENDLY_CONFIG, isCalendlyConfigured, getCalendlyUrlForDuration } from '../config/calendly';
+import { ExternalLink, Clock, Sparkles, AlertCircle } from 'lucide-react';
+import { CALENDLY_CONFIG, getCalendlyUrlForDuration } from '../config/calendly';
 
 const Booking = () => {
   const location = useLocation();
@@ -17,7 +17,6 @@ const Booking = () => {
   
   // Get the specific Calendly URL based on total duration
   const calendlyUrl = getCalendlyUrlForDuration(calendlyDuration);
-  const isConfigured = isCalendlyConfigured();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -98,43 +97,27 @@ const Booking = () => {
         <div className="max-w-5xl mx-auto">
           <Card className="shadow-2xl border-none overflow-hidden">
             <CardContent className="p-0">
-              {/* Calendly Inline Widget */}
+              {/* Calendly Inline Widget - Always show */}
               <div className="calendly-container bg-white" style={{ minHeight: '650px' }}>
-                {isConfigured ? (
-                  <InlineWidget
-                    url={calendlyUrl}
-                    pageSettings={{
-                      ...CALENDLY_CONFIG.PAGE_SETTINGS,
-                      hideEventTypeDetails: true,
-                      hideLandingPageDetails: true,
-                    }}
-                    prefill={{
-                      name: '',
-                      email: '',
-                      customAnswers: {
-                        a1: bookingDescription
-                      }
-                    }}
-                    styles={{
-                      height: '650px',
-                      width: '100%'
-                    }}
-                  />
-                ) : (
-                  <div className="flex items-center justify-center h-full p-12 bg-kryzalid-cream/50">
-                    <div className="text-center max-w-xl">
-                      <div className="w-20 h-20 bg-kryzalid-lavender rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Calendar className="h-10 w-10 text-kryzalid-rose" />
-                      </div>
-                      <h3 className="text-2xl font-cursive text-kryzalid-charcoal mb-4">
-                        Configuration Calendly Requise
-                      </h3>
-                      <p className="text-kryzalid-grey mb-6 leading-relaxed font-serif">
-                        Configurez votre lien Calendly dans <code className="bg-white px-2 py-1 rounded">/frontend/src/config/calendly.js</code>
-                      </p>
-                    </div>
-                  </div>
-                )}
+                <InlineWidget
+                  url={calendlyUrl}
+                  pageSettings={{
+                    ...CALENDLY_CONFIG.PAGE_SETTINGS,
+                    hideEventTypeDetails: false,
+                    hideLandingPageDetails: false,
+                  }}
+                  prefill={{
+                    name: '',
+                    email: '',
+                    customAnswers: {
+                      a1: bookingDescription
+                    }
+                  }}
+                  styles={{
+                    height: '650px',
+                    width: '100%'
+                  }}
+                />
               </div>
 
               {/* Fallback Button */}

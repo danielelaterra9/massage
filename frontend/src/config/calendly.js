@@ -88,6 +88,6 @@ export const getCalendlyUrlForDuration = (totalMinutes) => {
 
 // Fonction helper pour vérifier si le lien Calendly est configuré
 export const isCalendlyConfigured = () => {
-  const firstEventType = CALENDLY_CONFIG.EVENT_TYPES['MASSAGE_30MIN'];
+  const firstEventType = CALENDLY_CONFIG.EVENT_TYPES['MASSAGE_45MIN'];
   return firstEventType && !firstEventType.includes('[VOTRE_NOM]');
 };
