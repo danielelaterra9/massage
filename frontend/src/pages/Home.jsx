@@ -49,7 +49,7 @@ const Home = () => {
           </h2>
           <div className="w-24 h-1 bg-kryzalid-rose mx-auto mb-8"></div>
           <p className="text-lg md:text-xl text-kryzalid-grey leading-relaxed mb-6 font-serif">
-            Je m'appelle <strong className="text-kryzalid-charcoal">Caroline Maret</strong>, et je possède plus de 15 ans d'expérience dans la massothérapie.
+            Je m'appelle <strong className="text-kryzalid-charcoal">Caroline Maret</strong>, et je possède plus de 15 ans d'expérience nella massothérapie.
           </p>
           <p className="text-lg md:text-xl text-kryzalid-grey leading-relaxed mb-6 font-serif">
             Mon approche intuitive me permet de déceler les maux, physiques et émotionnels, 

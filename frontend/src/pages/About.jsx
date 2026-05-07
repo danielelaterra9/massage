@@ -58,7 +58,7 @@ const About = () => {
             de ce que le corps et l'esprit communiquent. »
           </p>
           <p className="text-lg text-gray-700 leading-relaxed">
-            Je ne propose pas simplement un massage standardisé. Mon travail consiste à 
+            Je ne propose pas simplement un massage standardisé. Mon lavoro consiste à 
             <strong> vous écouter</strong>, à <strong>comprendre vos besoins</strong> et à 
             <strong> personnaliser chaque séance</strong> pour qu'elle corresponde exactement 
             à ce dont vous avez besoin à ce moment précis.
@@ -117,13 +117,13 @@ const About = () => {
           </h2>
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              L'Institut Kryzalid est installé dans <strong>La Maison 44</strong> à Evionnaz, 
+              L'Institut Kryzalid est installé nella <strong>La Maison 44</strong> à Evionnaz, 
               une belle maison récemment rénovée qui abrite plusieurs thérapeutes.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               L'ambiance y est <strong>bienveillante et chaleureuse</strong>. Nous avons tous 
-              à cœur de rendre la vie de mes clients plus douce et de créer un espace où 
-              le bien-être est au centre de mes préoccupations.
+              à cœur de rendre la vie di mes clients plus douce et de créer un espace où 
+              le bien-être est au centre di mes préoccupations.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
               C'est avec plaisir que je vous accueille <strong>du lundi matin au samedi midi</strong>, 
