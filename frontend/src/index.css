@@ -5,11 +5,20 @@
 /* Hide Emergent badge */
 #emergent-badge,
 [id*="emergent"],
-[class*="emergent-badge"] {
+[class*="emergent-badge"],
+[class*="emergent"],
+.emergent-badge,
+div[id*="emergent"],
+a[href*="emergent"] {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
 }
 
 /* Import Google Fonts - Elegant cursive for titles and softer font for body */
