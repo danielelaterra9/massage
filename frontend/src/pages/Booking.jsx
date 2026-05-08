@@ -11,11 +11,11 @@ const Booking = () => {
   const selectedMassage = location.state?.selectedMassage || '';
   const supplementaryServices = location.state?.supplementaryServices || '';
   const totalDuration = location.state?.totalDuration || 0;
-  const calendlyDuration = location.state?.calendlyDuration || Math.ceil(totalDuration / 45) * 45;
-  const slots = location.state?.slots || Math.ceil(totalDuration / 45);
+  const calendlyDuration = location.state?.calendlyDuration || totalDuration;
+  const creneaux = location.state?.creneaux || Math.ceil(totalDuration / 15);
   const totalPrice = location.state?.totalPrice || 0;
   
-  // Get the specific Calendly URL based on total duration
+  // Get the Calendly URL
   const calendlyUrl = getCalendlyUrlForDuration(calendlyDuration);
 
   useEffect(() => {
@@ -81,7 +81,7 @@ const Booking = () => {
               <AlertCircle className="h-8 w-8 text-amber-600 flex-shrink-0" />
               <div>
                 <p className="text-amber-800 font-semibold">
-                  Réservez <span className="text-xl">{slots} slot{slots > 1 ? 's' : ''}</span> de 45 minutes ({calendlyDuration} min total)
+                  Sélectionnez un créneau de <span className="text-xl">{totalDuration} minutes</span> dans le calendrier
                 </p>
                 <p className="text-amber-700 text-sm mt-1">
                   Le paiement de CHF {totalPrice}.- se fait sur place

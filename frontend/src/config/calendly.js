@@ -35,13 +35,9 @@ export const CALENDLY_CONFIG = {
   TIMEZONE: 'Europe/Zurich',
   
   // ⚠️ LIENS CALENDLY - Configurez vos Event Types pour chaque durée
-  // Chaque slot est de 45 minutes
-  // 1 slot = 45 min, 2 slots = 90 min, 3 slots = 135 min
+  // Chaque créneau est de 15 minutes
   EVENT_TYPES: {
-    'MASSAGE_45MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
-    'MASSAGE_90MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
-    'MASSAGE_135MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
-    'MASSAGE_180MIN': 'https://calendly.com/massages-kryzalid?hide_event_type_details=1',
+    'MASSAGE_DEFAULT': 'https://calendly.com/massages-kryzalid',
   },
   
   // Mapping des massages aux Event Types
@@ -76,14 +72,11 @@ export const getCalendlyUrlForMassage = (massageName) => {
 };
 
 // Fonction helper pour obtenir le lien Calendly basé sur la durée totale (en minutes)
-// Arrondit au nombre de slots de 45 minutes nécessaires
+// Arrondit au nombre de créneaux de 15 minutes nécessaires
 export const getCalendlyUrlForDuration = (totalMinutes) => {
-  // Chaque slot est de 45 minutes
-  const slots = Math.ceil(totalMinutes / 45);
-  const slotDuration = slots * 45;
-  
-  const eventTypeKey = `MASSAGE_${slotDuration}MIN`;
-  return CALENDLY_CONFIG.EVENT_TYPES[eventTypeKey] || CALENDLY_CONFIG.EVENT_TYPES['MASSAGE_45MIN'];
+  // Chaque créneau est de 15 minutes - la durée est déjà un multiple de 15
+  // On utilise directement le lien Calendly principal
+  return CALENDLY_CONFIG.EVENT_TYPES['MASSAGE_DEFAULT'] || 'https://calendly.com/massages-kryzalid';
 };
 
 // Fonction helper pour vérifier si le lien Calendly est configuré

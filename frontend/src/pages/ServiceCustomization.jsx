@@ -71,18 +71,18 @@ const ServiceCustomization = () => {
     return baseDuration + supplementaryDuration;
   };
 
-  // Calcul de la durée pour Calendly (en slots de 45 minutes)
+  // Calcul de la durée pour Calendly (en créneaux de 15 minutes)
   const calculateCalendlyDuration = () => {
     const totalDuration = calculateDuration();
-    // Chaque slot est de 45 minutes
-    const slots = Math.ceil(totalDuration / 45);
-    return slots * 45;
+    // Chaque créneau est de 15 minutes
+    const creneaux = Math.ceil(totalDuration / 15);
+    return creneaux * 15;
   };
   
-  // Calcul du nombre de slots
-  const calculateSlots = () => {
+  // Calcul du nombre de créneaux
+  const calculateCreneaux = () => {
     const totalDuration = calculateDuration();
-    return Math.ceil(totalDuration / 45);
+    return Math.ceil(totalDuration / 15);
   };
 
   const toggleSupplementary = (id) => {
@@ -98,7 +98,7 @@ const ServiceCustomization = () => {
   const handleConfirm = () => {
     const totalDuration = calculateDuration();
     const calendlyDuration = calculateCalendlyDuration();
-    const slots = calculateSlots();
+    const creneaux = calculateCreneaux();
     const supplementaryNames = selectedSupplementary.map(id => {
       const service = supplementaryServices.find(s => s.id === id);
       return service?.name;
@@ -111,7 +111,7 @@ const ServiceCustomization = () => {
         supplementaryServices: supplementaryNames,
         totalDuration: totalDuration,
         calendlyDuration: calendlyDuration,
-        slots: slots,
+        creneaux: creneaux,
         totalPrice: calculateTotal(),
         basePrice: parseFloat(selectedService.price?.replace('CHF ', '') || 0)
       }
