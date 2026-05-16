@@ -6,7 +6,6 @@ import os
 import logging
 from pathlib import Path
 from routes.reservations import get_reservations_router
-from routes.calendar import router as calendar_router
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -34,9 +33,6 @@ async def health_check():
 # Include reservation routes
 reservations_router = get_reservations_router(db)
 api_router.include_router(reservations_router, tags=["reservations"])
-
-# Include calendar routes
-api_router.include_router(calendar_router, tags=["calendar"])
 
 # Include the router in the main app
 app.include_router(api_router)

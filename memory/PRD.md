@@ -8,7 +8,7 @@ Proprietario: **Caroline Maret** (15+ anni di esperienza in massoterapia)
 - **Frontend**: React 19 + TailwindCSS + Radix UI components
 - **Backend**: FastAPI (Python)
 - **Database**: MongoDB
-- **Booking System**: Calendly integration (react-calendly)
+- **Booking System**: Agenda.ch iframe embed (https://book.agenda.ch?companyId=18878)
 
 ## Core Features Implemented
 - Homepage con hero section e introduzione
@@ -16,7 +16,7 @@ Proprietario: **Caroline Maret** (15+ anni di esperienza in massoterapia)
 - Catalogo completo massaggi con filtri per categoria (Détente, Dos, Spécialisé, Premium)
 - Pagina dedicata "Massage Détente Profonde"
 - Sistema di personalizzazione servizio
-- Integrazione Calendly multi-durata
+- Integrazione Agenda.ch tramite iframe responsivo (min-height 800px)
 - Pagina contatti/prenotazione
 - Layout responsive con navigazione mobile
 
@@ -40,7 +40,6 @@ Proprietario: **Caroline Maret** (15+ anni di esperienza in massoterapia)
 - React Router DOM 7.5.1
 - TailwindCSS 3.4.17
 - Radix UI Components
-- react-calendly 4.4.0
 - FastAPI
 - Motor (MongoDB async driver)
 - Pydantic
@@ -50,16 +49,19 @@ Proprietario: **Caroline Maret** (15+ anni di esperienza in massoterapia)
 - Font: Dancing Script (titoli), Lora (body)
 - Logo: Farfalla Kryzalid personalizzata
 
-## Calendly Configuration
-I link Calendly devono essere configurati nel file `/frontend/src/config/calendly.js`
-con Event Types separati per ogni durata massaggio.
+## Booking Configuration
+Il sistema di prenotazione utilizza Agenda.ch tramite iframe embed.
+URL: `https://book.agenda.ch?companyId=18878`
+Integrato nella pagina `/reservation` (Booking.jsx) con altezza minima 800px e responsive design.
 
 ## What's Been Implemented
-- [x] Homepage completa
+- [x] Homepage completa con carosello testimonianze
 - [x] Navigazione e layout responsive
-- [x] Catalogo massaggi con immagini
+- [x] Catalogo massaggi con immagini, prezzi, durate aggiornati
 - [x] Sistema filtri per categoria
-- [x] Integrazione Calendly
+- [x] Personalizzazione servizio con calcolo dinamico durata/prezzo
+- [x] Integrazione Agenda.ch (iframe)
+- [x] Rimozione branding Emergent
 - [x] Backend API (health, reservations)
 - [x] Database MongoDB per prenotazioni
 
@@ -67,7 +69,8 @@ con Event Types separati per ogni durata massaggio.
 Repository GitHub: https://github.com/danielelaterra9/massage.git
 
 ## Next Tasks
-- Configurare i link Calendly personalizzati per ogni durata in `/frontend/src/config/calendly.js`
+- Test E2E del flusso prenotazione tramite Agenda.ch
+- Risoluzione SSL/Cloudflare Error 1001 sul dominio personalizzato (BLOCCATO - richiede Supporto Emergent)
 
 ## Changelog
 ### 31 Gennaio 2026
@@ -78,5 +81,12 @@ Repository GitHub: https://github.com/danielelaterra9/massage.git
   - Cuir chevelu et visage combiné (15 min - CHF 20)
   - Exfoliation des pieds et massage avec crème nourrissante (20 min - CHF 30)
 - Implementato calcolo dinamico durata totale e prezzo totale
-- Aggiunta funzione getCalendlyUrlForDuration() per selezionare automaticamente il tipo Calendly corretto
 - Aggiornata pagina Booking per mostrare récapitulatif completo con servizi, durata e prezzo totale
+
+### 16 Febbraio 2026
+- **Sostituito completamente Calendly/Google Calendar con Agenda.ch iframe** (`https://book.agenda.ch?companyId=18878`)
+- Rimossa dipendenza `react-calendly` da package.json
+- Eliminati file deprecati: `BookingCalendar.jsx`, `config/calendly.js`, `backend/google_calendar.py`, `backend/routes/calendar.py`
+- Pulito `server.py` da import del calendar router
+- Rinominato `calculateCalendlyDuration` → `calculateSlotDuration` in ServiceCustomization.jsx
+- Verificato funzionamento iframe Agenda.ch sulla pagina `/reservation`

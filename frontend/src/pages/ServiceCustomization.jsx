@@ -71,10 +71,9 @@ const ServiceCustomization = () => {
     return baseDuration + supplementaryDuration;
   };
 
-  // Calcul de la durée pour Calendly (en créneaux de 15 minutes)
-  const calculateCalendlyDuration = () => {
+  // Calcul de la durée arrondie en créneaux de 15 minutes
+  const calculateSlotDuration = () => {
     const totalDuration = calculateDuration();
-    // Chaque créneau est de 15 minutes
     const creneaux = Math.ceil(totalDuration / 15);
     return creneaux * 15;
   };
@@ -97,7 +96,7 @@ const ServiceCustomization = () => {
 
   const handleConfirm = () => {
     const totalDuration = calculateDuration();
-    const calendlyDuration = calculateCalendlyDuration();
+    const slotDuration = calculateSlotDuration();
     const creneaux = calculateCreneaux();
     const supplementaryNames = selectedSupplementary.map(id => {
       const service = supplementaryServices.find(s => s.id === id);
@@ -110,7 +109,7 @@ const ServiceCustomization = () => {
         selectedMassage: selectedService.name,
         supplementaryServices: supplementaryNames,
         totalDuration: totalDuration,
-        calendlyDuration: calendlyDuration,
+        slotDuration: slotDuration,
         creneaux: creneaux,
         totalPrice: calculateTotal(),
         basePrice: parseFloat(selectedService.price?.replace('CHF ', '') || 0)
