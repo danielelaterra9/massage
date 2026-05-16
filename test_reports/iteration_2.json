@@ -1,0 +1,52 @@
+{
+  "summary": "E2E testing complete for Institut Kryzalid post-Calendly→Agenda.ch migration. Backend: 14/14 pytest tests pass (health, root, /api/calendar/* removed, reservations full CRUD). Frontend: homepage, navigation, /massages, /customize-service, /reservation all load. Agenda.ch iframe embeds and renders correctly on desktop (1020x1080) and mobile (354x844). No console errors. WhatsApp + phone CTA present. Mobile hamburger menu functional.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "passed_tests": [
+    "GET /api/health → {status:'healthy', service:'Institut Kryzalid'}",
+    "GET /api/ → welcome message containing 'Kryzalid'",
+    "GET /api/calendar, /api/calendar/events, /api/calendar/availability, /api/calendar/slots, /api/calendar/book all return 404 (endpoints removed)",
+    "POST /api/reservations creates reservation, returns id + persisted fields",
+    "GET /api/reservations/{id} fetches by id, GET list works",
+    "PATCH /api/reservations/{id}/status?status=confirmed updates status (verified via GET)",
+    "DELETE /api/reservations/{id} removes, subsequent GET returns 404",
+    "GET /api/reservations/nonexistent → 404",
+    "Homepage loads with title 'Institut Kryzalid | Massages et Bien-être' + testimonial carousel section",
+    "Header nav contains: Accueil, À Propos, Massages & Tarifs, Détente Profonde, Réserver (+ mobile duplicates for hamburger)",
+    "/massages renders cards with 'CHF' prices and durations",
+    "/customize-service route resolves (deep flow verified in iteration_1.json)",
+    "/reservation shows 'Réserver Votre Massage' heading, recap card conditionally rendered when state present",
+    "Agenda.ch iframe: src='https://book.agenda.ch/?companyId=18878', minHeight 800px, visible 1020x1080 desktop / 354x844 mobile, title='Réservation Institut Kryzalid'",
+    "Contact CTAs on /reservation: tel +41 78 444 01 01 + WhatsApp link present",
+    "Mobile viewport (390px): hamburger menu button present, iframe still visible and responsive",
+    "Zero console errors and zero pageerrors → no broken imports from react-calendly / BookingCalendar.jsx / config/calendly.js",
+    "No 'Made with Emergent' text rendered in DOM body"
+  ],
+  "test_report_links": [
+    "/app/backend/tests/test_kryzalid_api.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Note: /app/frontend/public/index.html still loads https://assets.emergent.sh/scripts/emergent-main.js. The 'Made with Emergent' badge text is NOT rendered in the DOM body (test confirmed absent), but the loader script is still present in the HTML. If the requirement is to completely remove the Emergent branding *script reference*, this <script> tag should be removed from index.html. Currently the visible branding is gone as required.",
+    "Booking.jsx iframe uses loading='lazy' which delays load until near viewport — fine, but consider 'eager' since the iframe IS the primary CTA on /reservation.",
+    "reservations.py routes catch generic Exception and surface raw str(e) at 500 — fine for now, but could leak internal details; consider mapping ValidationError → 422 explicitly.",
+    "Reservation.jsx (legacy /contact route) still exists with its own form posting to /api/reservations; consistent with backend but duplicates booking UX with the Agenda.ch widget."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_kryzalid_api.py (created)"
+  ],
+  "success_rate": {"backend": "100% (14/14)", "frontend": "100%"},
+  "test_credentials": "N/A - public site, no auth",
+  "seed_data_creation": "Created and deleted a TEST_AutomatedUser reservation as part of CRUD test (cleaned up).",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Site is in French; booking page is /reservation (not /booking). Agenda.ch iframe is an external 3rd-party widget — do NOT try to interact inside it (cross-origin). Backend test file is at /app/backend/tests/test_kryzalid_api.py — reuse it. Email validator rejects .test TLD, use @example.com for test data. /api/reservations PATCH takes status as QUERY param, not body."
+}
