@@ -63,7 +63,7 @@ const Home = () => {
             Votre Bien-Être,
             <span className="block mt-2">Ma Passion</span>
           </h1>
-          <p className="sr-only">Institut Kryzalid – Massages à Evionnaz, Valais, proche Martigny. Massage relaxant, détente profonde, anti-cellulite, femme enceinte, pierres chaudes et Lomi-Lomi.</p>
+          <p className="sr-only">Massages Kryzalid – Institut Kryzalid à Evionnaz, Valais, proche Martigny. Caroline Maret. Massage relaxant, détente profonde, anti-cellulite, femme enceinte, pierres chaudes et Lomi-Lomi.</p>
           <p className="text-xl md:text-2xl mb-8 font-serif leading-relaxed max-w-2xl mx-auto drop-shadow-md">
             Chaque massage est une expérience unique, adaptée à vos besoins physiques et émotionnels
           </p>
@@ -89,7 +89,7 @@ const Home = () => {
           <h2 className="text-4xl md:text-5xl font-cursive text-kryzalid-charcoal mb-8">
             Bienvenue à l'Institut Kryzalid
           </h2>
-          <p className="text-sm text-kryzalid-grey/70 mb-4 font-serif uppercase tracking-wider">Massages à Evionnaz, Valais – À 10 minutes de Martigny</p>
+          <p className="text-sm text-kryzalid-grey/70 mb-4 font-serif uppercase tracking-wider">Massages Kryzalid à Evionnaz, Valais – À 10 minutes de Martigny</p>
           <div className="w-24 h-1 bg-kryzalid-rose mx-auto mb-8"></div>
           <p className="text-lg md:text-xl text-kryzalid-grey leading-relaxed mb-6 font-serif">
             Je m'appelle <strong className="text-kryzalid-charcoal">Caroline Maret</strong>, et je possède plus de 15 ans d'expérience dans la massothérapie.
