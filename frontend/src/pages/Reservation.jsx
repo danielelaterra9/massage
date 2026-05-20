@@ -298,7 +298,7 @@ const Reservation = () => {
               <div>
                 <h3 className="text-xl font-medium mb-2">Adresse</h3>
                 <p className="opacity-90 leading-relaxed">
-                  Institut Kryzalid<br />
+                  Massages Kryzalid<br />
                   La Maison 44<br />
                   Rue Principale 44<br />
                   1902 Evionnaz, Valais

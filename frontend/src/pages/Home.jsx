@@ -87,7 +87,7 @@ const Home = () => {
       <section className="py-20 px-4 bg-gradient-to-b from-kryzalid-cream to-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-cursive text-kryzalid-charcoal mb-8">
-            Bienvenue à l'Institut Kryzalid
+            Bienvenue chez Massages Kryzalid
           </h2>
           <p className="text-sm text-kryzalid-grey/70 mb-4 font-serif uppercase tracking-wider">Massages Kryzalid à Evionnaz, Valais – À 10 minutes de Martigny</p>
           <div className="w-24 h-1 bg-kryzalid-rose mx-auto mb-8"></div>

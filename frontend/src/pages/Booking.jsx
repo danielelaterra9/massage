@@ -103,7 +103,7 @@ const Booking = () => {
               <div className="w-full bg-white">
                 <iframe
                   src="https://book.agenda.ch?companyId=18878"
-                  title="Réservation Institut Kryzalid"
+                  title="Réservation Massages Kryzalid"
                   className="w-full border-0"
                   style={{ 
                     minHeight: '800px',

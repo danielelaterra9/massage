@@ -30,7 +30,7 @@ const About = () => {
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Massothérapeute passionnée avec plus de <strong>15 ans d'expérience</strong>, 
-                je vous accueille à l'Institut Kryzalid pour vous offrir des moments de détente 
+                je vous accueille chez Massages Kryzalid pour vous offrir des moments de détente 
                 et de bien-être profond.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -117,7 +117,7 @@ const About = () => {
           </h2>
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              L'Institut Kryzalid est installé dans <strong>La Maison 44</strong> à Evionnaz, 
+              Massages Kryzalid est installé dans <strong>La Maison 44</strong> à Evionnaz, 
               une belle maison récemment rénovée qui abrite plusieurs thérapeutes.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
