@@ -19,13 +19,12 @@ const Layout = ({ children }) => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center py-2 md:py-3">
             <Link to="/" className="flex items-center gap-2 group" onClick={closeMobileMenu}>
-              {/* Butterfly logo - LARGER */}
-              <div className="relative h-24 w-24 md:h-44 md:w-44">
+              {/* Butterfly logo - LARGER (transparent PNG) */}
+              <div className="relative h-32 w-32 md:h-60 md:w-60">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_kryzalid-massage/artifacts/jgfbf9j0_IMG-20260309-WA0005.jpg" 
-                  alt="Kryzalid Butterfly" 
+                  src="https://static.prod-images.emergentagent.com/jobs/0a9d6d57-b9f1-4d54-82c0-bebb58177512/images/814d61f9ecd3318db290920912d70079df7992bfb71e793e56f93e42ef2c1fa6.png" 
+                  alt="Massages Kryzalid - Logo Papillon" 
                   className="h-full w-full object-contain"
-                  style={{ mixBlendMode: 'multiply' }}
                 />
               </div>
               {/* Text - smaller */}

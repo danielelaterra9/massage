@@ -15,20 +15,6 @@ const supplementaryServices = [
     description: 'Massage relaxant du cuir chevelu'
   },
   {
-    id: 'visage',
-    name: 'Massage du visage',
-    duration: 10,
-    price: 15,
-    description: 'Massage détente du visage'
-  },
-  {
-    id: 'cuir-chevelu-visage',
-    name: 'Cuir chevelu et visage combiné',
-    duration: 15,
-    price: 20,
-    description: 'Massage complet du cuir chevelu et du visage'
-  },
-  {
     id: 'exfoliation-pieds',
     name: 'Exfoliation des pieds et massage avec crème nourrissante',
     duration: 20,
