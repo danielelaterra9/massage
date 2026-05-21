@@ -22,10 +22,10 @@ const Layout = ({ children }) => {
               {/* Butterfly logo - client's original artwork (transparent PNG) - height 100px */}
               <div className="relative bg-transparent">
                 <img 
-                  src="https://static.prod-images.emergentagent.com/jobs/0a9d6d57-b9f1-4d54-82c0-bebb58177512/images/c67373d3b0b214c86c62456b21dcc813453a74e6214c513ef7b12f4f50154274.png" 
+                  src="https://static.prod-images.emergentagent.com/jobs/0a9d6d57-b9f1-4d54-82c0-bebb58177512/images/1cc94bfd1630ff3525b618175602f935f2163de93070ac434b180c72ce0b6e27.png" 
                   alt="Massages Kryzalid - Logo Papillon" 
                   className="object-contain bg-transparent"
-                  style={{ height: '100px', width: 'auto' }}
+                  style={{ height: '120px', width: 'auto' }}
                 />
               </div>
               {/* Text - smaller */}
