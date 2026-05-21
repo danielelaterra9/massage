@@ -19,12 +19,12 @@ const Layout = ({ children }) => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center py-2 md:py-3">
             <Link to="/" className="flex items-center gap-2 group" onClick={closeMobileMenu}>
-              {/* Butterfly logo - LARGER (transparent PNG) */}
-              <div className="relative h-32 w-32 md:h-60 md:w-60">
+              {/* Butterfly logo - LARGER (transparent PNG, no background) */}
+              <div className="relative h-32 w-32 md:h-72 md:w-72 bg-transparent">
                 <img 
-                  src="https://static.prod-images.emergentagent.com/jobs/0a9d6d57-b9f1-4d54-82c0-bebb58177512/images/814d61f9ecd3318db290920912d70079df7992bfb71e793e56f93e42ef2c1fa6.png" 
+                  src="https://static.prod-images.emergentagent.com/jobs/0a9d6d57-b9f1-4d54-82c0-bebb58177512/images/c67373d3b0b214c86c62456b21dcc813453a74e6214c513ef7b12f4f50154274.png" 
                   alt="Massages Kryzalid - Logo Papillon" 
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-contain bg-transparent"
                 />
               </div>
               {/* Text - smaller */}
